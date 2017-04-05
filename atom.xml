@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-04-05T07:43:27.000Z</updated>
+  <updated>2017-04-05T13:03:44.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>The Node Way: Philosophy of a Platform</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/</id>
+    <published>2017-04-05T13:01:29.000Z</published>
+    <updated>2017-04-05T13:03:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png" alt=""><br>Last week, when <a href="https://nodejs.org/en/blog/" target="_blank" rel="external">Node.js</a> community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.</p>
+<a id="more"></a>
+<p>Every platform has its own philosophy, its own set of rules, its own principles and guidelines. This is necessary for the evolution of a platform and is important for developing an application using that platform. (Otherwise, we all can get carried away.) Node.js has its own philosophy, since its a platform, and it manages to find a middleground between JavaScript and UNIX.</p>
+<p>Two of the most important principles of UNIX that are adaptable in Node.js are:</p>
+<ul>
+<li>Modularity, keeping simple parts short, connected with clean interfaces.</li>
+<li>A program should do one thing and it should do that awesomely.</li>
+</ul>
+<p>Other rules described by Eric Steven Raymond in <a href="http://www.catb.org/esr/writings/taoup/html/index.html" target="_blank" rel="external">The Art of UNIX Programming</a> might fit to some extent but the two aforementioned are necessary to use Node.js pragmatically.</p>
+<p>In Node.js this pragmaticism is provided the by a <strong>‘module’</strong>. A module is the fundamental to structure the code of a program in Node.js. Module is also the building block of a package. (A package is any application or reusable libraries).</p>
+<p>The principle here is to design small modules in terms of code and in terms of application scope. This principle provides:</p>
+<ul>
+<li>reusability of code</li>
+<li>easier to understand the code</li>
+<li>thus, making it simple to test and maintain</li>
+</ul>
+<p>Another important aspect in the Node Philosophy is the dependency of each package. Writing a Node.js application, one tends to use a lot of packages <em>(which is the genesis of Node.js Ecosystem: npm)</em> and this might create a common problem known as: dependency hell. To overcome this conflict, Node.js manages dependencies of each installed package to have its own separate set of dependencies.</p>
+<p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on March 10, 2016.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;Last week, when &lt;a href=&quot;https://nodejs.org/en/blog/&quot;&gt;Node.js&lt;/a&gt; community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>JavaScript Code Conventions</title>
     <link href="http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/</id>
     <published>2017-04-03T17:31:43.000Z</published>
-    <updated>2017-04-05T07:43:27.000Z</updated>
+    <updated>2017-04-05T13:03:42.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/D4i0LcT.jpg" alt=""><br>This article is about coding conventions. Everywhere I read good/better/awesome articles but very few seem to talk about the the basic things in programming.</p>
 <a id="more"></a>
@@ -63,7 +101,9 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Single-Line Comment</span></div></pre></td></tr></table></figure>
 <blockquote><p>Following all conventions of can be hard and a stressful matter at times when you are focusing on the logic part of the code. Thus, there is an alternative which works for me most of the time, is the Beautify package that I use in the text editor Atom and I am sure it is available for the majority of other text editors.</p>
 </blockquote>
-<a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe to my newsletter</a>]]></content>
+<a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe to my newsletter</a>
+<p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on January 8, 2016.</p>
+]]></content>
     
     <summary type="html">
     
