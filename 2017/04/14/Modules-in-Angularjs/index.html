@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>The Node Way: Philosophy of a Platform | Aman Mittal&#39;s Blog</title>
+    <title>Modules in Angularjs | Aman Mittal&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Last week, when Node.js community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark stil">
+    <meta name="description" content="Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="The Node Way: Philosophy of a Platform">
-<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/index.html">
+<meta property="og:title" content="Modules in Angularjs">
+<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/index.html">
 <meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="Last week, when Node.js community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark stil">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png">
-<meta property="og:updated_time" content="2017-04-05T13:03:44.000Z">
+<meta property="og:description" content="Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.">
+<meta property="og:image" content="http://i.imgur.com/KdhytmU.png">
+<meta property="og:updated_time" content="2017-04-14T07:08:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="The Node Way: Philosophy of a Platform">
-<meta name="twitter:description" content="Last week, when Node.js community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark stil">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png">
+<meta name="twitter:title" content="Modules in Angularjs">
+<meta name="twitter:description" content="Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.">
+<meta name="twitter:image" content="http://i.imgur.com/KdhytmU.png">
     
 
     
@@ -208,7 +208,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-The-Node-Way-Philosophy-of-a-Platform" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Modules-in-Angularjs" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,7 +216,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            The Node Way: Philosophy of a Platform
+            Modules in Angularjs
         </h1>
     
 
@@ -225,8 +225,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">
-            <time datetime="2017-04-05T13:01:29.000Z" itemprop="datePublished">2017-04-05</time>
+        <a href="/blog/2017/04/14/Modules-in-Angularjs/">
+            <time datetime="2017-04-14T06:50:12.000Z" itemprop="datePublished">2017-04-14</time>
         </a>
     </div>
 
@@ -235,7 +235,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
+        <a class="tag-link" href="/blog/tags/angularjs/">angularjs</a>
     </div>
 
                     </div>
@@ -246,25 +246,21 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><img src="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png" alt=""><br>Last week, when <a href="https://nodejs.org/en/blog/" target="_blank" rel="external">Node.js</a> community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.</p>
+            <p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
+<p>Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.</p>
 <a id="more"></a>
-<p>Every platform has its own philosophy, its own set of rules, its own principles and guidelines. This is necessary for the evolution of a platform and is important for developing an application using that platform. (Otherwise, we all can get carried away.) Node.js has its own philosophy, since its a platform, and it manages to find a middleground between JavaScript and UNIX.</p>
-<p>Two of the most important principles of UNIX that are adaptable in Node.js are:</p>
-<ul>
-<li>Modularity, keeping simple parts short, connected with clean interfaces.</li>
-<li>A program should do one thing and it should do that awesomely.</li>
-</ul>
-<p>Other rules described by Eric Steven Raymond in <a href="http://www.catb.org/esr/writings/taoup/html/index.html" target="_blank" rel="external">The Art of UNIX Programming</a> might fit to some extent but the two aforementioned are necessary to use Node.js pragmatically.</p>
-<p>In Node.js this pragmaticism is provided the by a <strong>‘module’</strong>. A module is the fundamental to structure the code of a program in Node.js. Module is also the building block of a package. (A package is any application or reusable libraries).</p>
-<p>The principle here is to design small modules in terms of code and in terms of application scope. This principle provides:</p>
-<ul>
-<li>reusability of code</li>
-<li>easier to understand the code</li>
-<li>thus, making it simple to test and maintain</li>
-</ul>
-<p>Another important aspect in the Node Philosophy is the dependency of each package. Writing a Node.js application, one tends to use a lot of packages <em>(which is the genesis of Node.js Ecosystem: npm)</em> and this might create a common problem known as: dependency hell. To overcome this conflict, Node.js manages dependencies of each installed package to have its own separate set of dependencies.</p>
-<p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on March 10, 2016.</p>
-
+<h2 id="Creating-a-simple-Module"><a href="#Creating-a-simple-Module" class="headerlink" title="Creating a simple Module"></a>Creating a simple Module</h2><p><code>angular.module</code> function is used to create a module whenever necessary. The first argument is always the module name and the second argument is an array that specifies additional modules upon which are current module depends.</p>
+<p>If there’s no dependency, pass an empty array</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// module with no dependency</span></div><div class="line">angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line"><span class="comment">// module with dependencies</span></div><div class="line">angular.module(<span class="string">'moduleB'</span>, [<span class="string">'moduleA'</span>, <span class="string">'moduleC'</span>]);</div></pre></td></tr></table></figure>
+<p>After creating a module, different components are bind with it.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">myModule.controller(...);</div><div class="line"></div><div class="line">myModule.service(...);</div></pre></td></tr></table></figure>
+<p>The above code creates a new module and attaches two components with it: a controller, and a directive. It also declares a global variable <code>myModule</code> in the JavaScript global namespace. Imagine a large app with vast amount of global variables like this. To avoid this situation of populating JavaScript global namespace, we can declare the whole code inside an IIFE.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> myModule = angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">  myModule.controller(...);</div><div class="line"></div><div class="line">  myModule.service(...);</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// myModule is undefined here</span></div></pre></td></tr></table></figure>
+<p>This function will execute as soon as it’s declared.</p>
+<p>There’s alternative procedure in which IIFE can be avoided, and is simple. Call the Angular Module with a single argument. When an angular module is called with a single argument, it retrieves the already created module and returns it.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">angular.module(<span class="string">'firstModule'</span>).controller(...);</div><div class="line">angular.module(<span class="string">'firstModule'</span>).directive(...);</div></pre></td></tr></table></figure>
+<p>Alternatively, to avoid boilerplate, components such as controllers and directives can be chained with the module declaration.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, [])     <span class="comment">// notice no semicolon</span></div><div class="line">.controller(...)</div><div class="line">.directive(...);                <span class="comment">// notice the semicolon</span></div></pre></td></tr></table></figure>
         
         </div>
         <footer class="article-footer">
@@ -329,7 +325,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">Comments</a>
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/">Comments</a>
     
 
         </footer>
@@ -338,19 +334,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/blog/2017/04/14/Modules-in-Angularjs/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    Modules in Angularjs
-                
-            </div>
-        </a>
     
-    
-        <a href="/blog/2017/04/03/JavaScript-Code-Conventions/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">JavaScript Code Conventions</div>
+            <div class="article-nav-title">The Node Way: Philosophy of a Platform</div>
         </a>
     
 </nav>
@@ -505,9 +492,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/';
+            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/';
         
-        this.page.identifier = 'The-Node-Way-Philosophy-of-a-Platform';
+        this.page.identifier = 'Modules-in-Angularjs';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
