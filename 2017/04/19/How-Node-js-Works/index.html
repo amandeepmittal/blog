@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2017 | Aman Mittal&#39;s Blog</title>
+    <title>How Node.js Works? | Aman Mittal&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I just find Node.js adroable...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aman Mittal's Blog">
-<meta property="og:url" content="http://amandeepmittal.github.io/blog/archives/2017/index.html">
+    <meta name="description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How Node.js Works?">
+<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/index.html">
 <meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="I just find Node.js adroable...">
+<meta property="og:description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png">
+<meta property="og:updated_time" content="2017-04-19T05:54:37.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aman Mittal's Blog">
-<meta name="twitter:description" content="I just find Node.js adroable...">
+<meta name="twitter:title" content="How Node.js Works?">
+<meta name="twitter:description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png">
     
 
     
@@ -205,25 +208,21 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main"><article id="post-How-Node-js-Works" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/19/How-Node-js-Works/">How Node.js Works?</a>
+        <h1 class="article-title" itemprop="name">
+            How Node.js Works?
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/19/How-Node-js-Works/">
@@ -232,111 +231,142 @@ ga('send', 'pageview');
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
         <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/14/Modules-in-Angularjs/">Modules in Angularjs</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
+<p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
+<a id="more"></a>
+<p>If you are familiar with Node.js, it is a known fact that Node.js is single threaded. If you are from programming/computer science background you know what a thread means. Consider this scenario: traditionally — an I/O request comes to a web server and is assigned to an available thread, and for each concurrent connection there is one thread available. That request is handled on the specific thread until it is fulfilled and the response is sent.</p>
+<p>This scenario is a perfect example of <strong>Blocking</strong> I/O because while handling a particular request by a specific thread, there will be some idle time when the operations are being done (such as retrieving a file, opening it, reading it, etc.). A single thread consumes memory. A longer running thread for each connection and then sitting idly for some amount of time is not considered an efficient way in the world of <a href="https://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">Node.js</a>.</p>
+<h2 id="Enter-Reactor-Pattern-Heart-of-Node-js"><a href="#Enter-Reactor-Pattern-Heart-of-Node-js" class="headerlink" title="Enter Reactor Pattern- Heart of Node.js"></a>Enter Reactor Pattern- Heart of Node.js</h2><p><strong>Reactor Pattern</strong> is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a callback function) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a demultiplexer.</p>
+<p>This demultiplexer is a notification interface that is used to handle concurrency in <em>non-blocking I/O</em> mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the <strong>Event Queue</strong>, which we often hear. When a request is collected by the demultiplexer, it returns the control back to the system and does not blocks the I/O. At the same time, there is an <strong>Event Loop</strong> which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.</p>
+<p>The callback function further mostly have other callbacks associated within representing some asynchronous operations. These operations are inserted in the Event Queue by the demultiplexer and are ready to be processed once the Event Loop iterates over them. That is why calls to other operations must be asynchronous.</p>
+<p>When all the items in the Event Queue are processed and there are no pending operations left, Node.js terminates the application automatically.</p>
+<h2 id="Building-Blocks-of-Node-js"><a href="#Building-Blocks-of-Node-js" class="headerlink" title="Building Blocks of Node.js"></a>Building Blocks of Node.js</h2><ul>
+<li>Reactor Pattern</li>
+<li>libuv</li>
+<li>A set of Bindings</li>
+<li>Chrome’s V8</li>
+<li>Core JS Library</li>
+</ul>
+<h3 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h3><p>Pronounced as “lib u v”, is library written in C language to make Node.js compatible with every OS and provide the non-blocking I/O behaviour. <a href="http://docs.libuv.org/en/v1.x/" target="_blank" rel="external">libuv</a> is a low-level engine that implements reactor pattern thus providing an API for creating the Event Loop, managing an Event Queue and running asynchronous I/O operations. It is built specifically to provide a unified experience over different Operating Systems.</p>
+<h3 id="Need-for-libuv"><a href="#Need-for-libuv" class="headerlink" title="Need for libuv?"></a>Need for libuv?</h3><p>Each operating system has its own interface for the demultiplexer. Such as <a href="https://en.wikipedia.org/wiki/Kqueue" target="_blank" rel="external">Kqueue</a> for Mac OS X, <a href="https://en.wikipedia.org/wiki/Input/output_completion_port" target="_blank" rel="external">IOCP</a> for Windows and [Epoll]<a href="https://en.wikipedia.org/wiki/Epoll" target="_blank" rel="external">https://en.wikipedia.org/wiki/Epoll</a> for Linux. Different multiplexers will behave differently when handling an I/O request. And then, each I/O operation can differ in its behaviour within the same operating system. This creates an inconsistency and to overcome this inconsistency <em>libuv</em> is the solution.</p>
+<p><em>I am not going to talk about internal workings of libuv here, not an expert on that, myself. For more info on libuv check their <a href="http://docs.libuv.org/" target="_blank" rel="external">docs</a> or this <a href="http://www.slideshare.net/saghul/libuv-nodejs-and-everything-in-between" target="_blank" rel="external">slide</a> by Saúl Ibarra Corretgé <a href="https://twitter.com/saghul" target="_blank" rel="external">(@saghul)</a> is a good start.</em></p>
+<p><a href="https://github.com/libuv/libuv" target="_blank" rel="external">Also, libuv is independently maintained by awesome developers.</a></p>
+<h3 id="Set-of-Bindings"><a href="#Set-of-Bindings" class="headerlink" title="Set of Bindings"></a>Set of Bindings</h3><p>These set of bindings are responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.</p>
+<h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><p>It’s a <a href="https://developers.google.com/v8/" target="_blank" rel="external">runtime engine developed by Google for Chrome</a> browser for JavaScript. It is the reason Node.js is fast and efficient.</p>
+<h3 id="Core-Library"><a href="#Core-Library" class="headerlink" title="Core Library"></a>Core Library</h3><p>This is a JavaScript library that implements high-level Node.js API (a.k.a. node-core).</p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/14/Modules-in-Angularjs/">
-            <time datetime="2017-04-14T06:50:12.000Z" itemprop="datePublished">2017-04-14</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/angularjs/">angularjs</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">The Node Way: Philosophy of a Platform</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">
-            <time datetime="2017-04-05T13:01:29.000Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/03/JavaScript-Code-Conventions/">JavaScript Code Conventions</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/03/JavaScript-Code-Conventions/">
-            <time datetime="2017-04-03T17:31:43.000Z" itemprop="datePublished">2017-04-03</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/javascript/">javascript</a>
-    </div>
-
-                </div>
-            </div>
-        </div>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
 </div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
+</div>
+
+            
+    
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2017/04/14/Modules-in-Angularjs/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Modules in Angularjs</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -490,11 +520,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/';
+        
+        this.page.identifier = 'How-Node-js-Works';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'aman-blog' + '.disqus.com/count.js';
+        s.src = '//' + 'aman-blog' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

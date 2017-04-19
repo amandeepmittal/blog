@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-04-14T07:08:40.000Z</updated>
+  <updated>2017-04-19T05:54:37.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,50 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How Node.js Works?</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/</id>
+    <published>2017-04-19T05:54:37.000Z</published>
+    <updated>2017-04-19T05:54:37.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
+<p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
+<a id="more"></a>
+<p>If you are familiar with Node.js, it is a known fact that Node.js is single threaded. If you are from programming/computer science background you know what a thread means. Consider this scenario: traditionally — an I/O request comes to a web server and is assigned to an available thread, and for each concurrent connection there is one thread available. That request is handled on the specific thread until it is fulfilled and the response is sent.</p>
+<p>This scenario is a perfect example of <strong>Blocking</strong> I/O because while handling a particular request by a specific thread, there will be some idle time when the operations are being done (such as retrieving a file, opening it, reading it, etc.). A single thread consumes memory. A longer running thread for each connection and then sitting idly for some amount of time is not considered an efficient way in the world of <a href="https://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">Node.js</a>.</p>
+<h2 id="Enter-Reactor-Pattern-Heart-of-Node-js"><a href="#Enter-Reactor-Pattern-Heart-of-Node-js" class="headerlink" title="Enter Reactor Pattern- Heart of Node.js"></a>Enter Reactor Pattern- Heart of Node.js</h2><p><strong>Reactor Pattern</strong> is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a callback function) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a demultiplexer.</p>
+<p>This demultiplexer is a notification interface that is used to handle concurrency in <em>non-blocking I/O</em> mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the <strong>Event Queue</strong>, which we often hear. When a request is collected by the demultiplexer, it returns the control back to the system and does not blocks the I/O. At the same time, there is an <strong>Event Loop</strong> which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.</p>
+<p>The callback function further mostly have other callbacks associated within representing some asynchronous operations. These operations are inserted in the Event Queue by the demultiplexer and are ready to be processed once the Event Loop iterates over them. That is why calls to other operations must be asynchronous.</p>
+<p>When all the items in the Event Queue are processed and there are no pending operations left, Node.js terminates the application automatically.</p>
+<h2 id="Building-Blocks-of-Node-js"><a href="#Building-Blocks-of-Node-js" class="headerlink" title="Building Blocks of Node.js"></a>Building Blocks of Node.js</h2><ul>
+<li>Reactor Pattern</li>
+<li>libuv</li>
+<li>A set of Bindings</li>
+<li>Chrome’s V8</li>
+<li>Core JS Library</li>
+</ul>
+<h3 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h3><p>Pronounced as “lib u v”, is library written in C language to make Node.js compatible with every OS and provide the non-blocking I/O behaviour. <a href="http://docs.libuv.org/en/v1.x/" target="_blank" rel="external">libuv</a> is a low-level engine that implements reactor pattern thus providing an API for creating the Event Loop, managing an Event Queue and running asynchronous I/O operations. It is built specifically to provide a unified experience over different Operating Systems.</p>
+<h3 id="Need-for-libuv"><a href="#Need-for-libuv" class="headerlink" title="Need for libuv?"></a>Need for libuv?</h3><p>Each operating system has its own interface for the demultiplexer. Such as <a href="https://en.wikipedia.org/wiki/Kqueue" target="_blank" rel="external">Kqueue</a> for Mac OS X, <a href="https://en.wikipedia.org/wiki/Input/output_completion_port" target="_blank" rel="external">IOCP</a> for Windows and [Epoll]<a href="https://en.wikipedia.org/wiki/Epoll" target="_blank" rel="external">https://en.wikipedia.org/wiki/Epoll</a> for Linux. Different multiplexers will behave differently when handling an I/O request. And then, each I/O operation can differ in its behaviour within the same operating system. This creates an inconsistency and to overcome this inconsistency <em>libuv</em> is the solution.</p>
+<p><em>I am not going to talk about internal workings of libuv here, not an expert on that, myself. For more info on libuv check their <a href="http://docs.libuv.org/" target="_blank" rel="external">docs</a> or this <a href="http://www.slideshare.net/saghul/libuv-nodejs-and-everything-in-between" target="_blank" rel="external">slide</a> by Saúl Ibarra Corretgé <a href="https://twitter.com/saghul" target="_blank" rel="external">(@saghul)</a> is a good start.</em></p>
+<p><a href="https://github.com/libuv/libuv" target="_blank" rel="external">Also, libuv is independently maintained by awesome developers.</a></p>
+<h3 id="Set-of-Bindings"><a href="#Set-of-Bindings" class="headerlink" title="Set of Bindings"></a>Set of Bindings</h3><p>These set of bindings are responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.</p>
+<h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><p>It’s a <a href="https://developers.google.com/v8/" target="_blank" rel="external">runtime engine developed by Google for Chrome</a> browser for JavaScript. It is the reason Node.js is fast and efficient.</p>
+<h3 id="Core-Library"><a href="#Core-Library" class="headerlink" title="Core Library"></a>Core Library</h3><p>This is a JavaScript library that implements high-level Node.js API (a.k.a. node-core).</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about &lt;strong&gt;Node.js System&lt;/strong&gt; — a glimpse of internal workings of Node.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+  </entry>
   
   <entry>
     <title>Modules in Angularjs</title>
@@ -55,7 +99,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/</id>
     <published>2017-04-05T13:01:29.000Z</published>
-    <updated>2017-04-05T13:03:44.000Z</updated>
+    <updated>2017-04-19T05:53:27.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png" alt=""><br>Last week, when <a href="https://nodejs.org/en/blog/" target="_blank" rel="external">Node.js</a> community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.</p>
 <a id="more"></a>
@@ -74,6 +118,7 @@
 <li>thus, making it simple to test and maintain</li>
 </ul>
 <p>Another important aspect in the Node Philosophy is the dependency of each package. Writing a Node.js application, one tends to use a lot of packages <em>(which is the genesis of Node.js Ecosystem: npm)</em> and this might create a common problem known as: dependency hell. To overcome this conflict, Node.js manages dependencies of each installed package to have its own separate set of dependencies.</p>
+<hr>
 <p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on March 10, 2016.</p>
 ]]></content>
     
