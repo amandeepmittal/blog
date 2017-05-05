@@ -110,9 +110,9 @@
     </summary>
     
     
-      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
