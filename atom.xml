@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-05-18T17:18:58.000Z</updated>
+  <updated>2017-05-21T18:16:18.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -16,11 +16,49 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Concepts in Angularjs</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/05/21/Concepts-in-Angularjs/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/05/21/Concepts-in-Angularjs/</id>
+    <published>2017-05-21T18:16:18.000Z</published>
+    <updated>2017-05-21T18:16:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
+<p>AngularJS is a client side web application JavaScript framework, developed by Google that enhances HTML syntax. There are many options available when it comes picking up a client side framework as JavaScript has evolved fast in past two years.</p>
+<p>AngularJS 1.x the version we are discussing here, does not supports Mobile applications natively, for more info check <a href="https://hackernoon.com/getting-started-with-ionic-framework-an-overview-6725b687779b" target="_blank" rel="external">Ionic Framework Overview</a>.</p>
+<h2 id="Concepts-in-AngularJS"><a href="#Concepts-in-AngularJS" class="headerlink" title="Concepts in AngularJS"></a>Concepts in AngularJS</h2><p>AngularJS uses HTMl as template language as compared to some other frameworks. It enhances it by providing pre-defined custom HTML elements (in the form directives, and you can build your own custom).</p>
+<h3 id="MVW"><a href="#MVW" class="headerlink" title="MVW?"></a>MVW?</h3><p>Angular uses either of MVC (Model-View-Controller) &amp; MVVM(Model-View-View-Model) architectural design patters to develop web applications.</p>
+<p><strong>MVC</strong> promotes separation of concerns. In this, the View is separated from the Model through a controller which handles business logic and coordinates model and view. Here, Model represents the business data and View is the representation of that business data.</p>
+<h3 id="Two-way-Data-Binding"><a href="#Two-way-Data-Binding" class="headerlink" title="Two-way Data Binding"></a>Two-way Data Binding</h3><p><img src="https://docs.angularjs.org/img/Two_Way_Data_Binding.png" alt=""></p>
+<p>This concept provides synchronization between Model and View. It states: changes in Model are reflected in View and changes in View are instantly reflected back in Model.</p>
+<p>More info at: <a href="https://docs.angularjs.org/guide/databinding" target="_blank" rel="external">Guide: Two_Way_Data_Binding</a></p>
+<h3 id="Directives"><a href="#Directives" class="headerlink" title="Directives"></a>Directives</h3><p>Two words define them: <em>Custom HTML</em>.</p>
+<p>They appear in the form of attributes that can be used with normal HTML elements and in the form elements as well. Built in directives are mostly prefixed with <code>ng-</code>.</p>
+<p>One most commonly used directive is: <code>ng-app</code> which is used to Bootstrap the application and the name of the application is passed as value.</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">ng-app="myApp"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h3><p>It is a software design pattern that deals with how components get hold of their dependencies.</p>
+<p>Components such as services, directives, filters, and animations are defined by an injectable factory method or constructor function. These components can be injected with “service” and “value” components as dependencies.</p>
+<h3 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h3><p>SPA stands for Single Page Application in which either all necessary HTML, CSS and JavaScript code is retrieved with a single page load or the appropriate resources are loaded dynamically usually in response to a user request.</p>
+<p>To fulfill a user request, Angular responses are managed via AJAX using HTTP verbs: GET, POST, PUT, DELETE, in most cases a RESTful API consisting endpoints at backend.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KdhytmU.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;AngularJS is a client side web application JavaScript framework, developed by Go
+    
+    </summary>
+    
+    
+      <category term="angularjs" scheme="http://amandeepmittal.github.io/blog/tags/angularjs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Modular programming in Angularjs</title>
     <link href="http://amandeepmittal.github.io/blog/2017/05/18/Modular-programming-in-Angularjs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/18/Modular-programming-in-Angularjs/</id>
     <published>2017-05-18T17:18:57.000Z</published>
-    <updated>2017-05-18T17:18:58.000Z</updated>
+    <updated>2017-05-21T17:34:31.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/e8vuWgs.png" alt=""></p>
 <p>Source code of an angular application can be divided in two ways:</p>
@@ -59,7 +97,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/</id>
     <published>2017-05-05T04:30:41.000Z</published>
-    <updated>2017-05-05T04:32:03.000Z</updated>
+    <updated>2017-05-21T17:54:34.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/xNQU22c.jpg" alt=""></p>
 <p>Ever since I got interested in Node.js and started learning to program in JavaScript, both the programming language and the server side platform have been most relevant to me. Due them, I have made my first PR to an open source project on Github, heck, I even built one of my own using them (<em>see <a href="https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot" target="_blank" rel="external">#100DaysOfCode</a></em>) which currently has more than 6 people actively contributing and enhancing it.</p>
@@ -79,13 +117,13 @@
     </summary>
     
     
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="webstrom" scheme="http://amandeepmittal.github.io/blog/tags/webstrom/"/>
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
@@ -94,7 +132,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/</id>
     <published>2017-04-28T09:36:48.000Z</published>
-    <updated>2017-04-28T09:43:40.000Z</updated>
+    <updated>2017-05-21T17:32:57.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/7SvpTRp.png" alt=""></p>
 <p>ESLint is an open source JavaScript linting utility that help you overcome developer errors as JavaScript is loosely-typed language. There are quite a few options such as JSHint and JSCS in Javascript community for code linting and this post doesn’t suggest that you cannot use them.</p>
@@ -164,7 +202,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/</id>
     <published>2017-04-19T05:54:37.000Z</published>
-    <updated>2017-04-19T06:02:38.000Z</updated>
+    <updated>2017-05-21T17:34:22.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
 <p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
@@ -208,7 +246,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/</id>
     <published>2017-04-14T06:50:12.000Z</published>
-    <updated>2017-04-14T07:08:40.000Z</updated>
+    <updated>2017-05-21T17:34:42.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
 <p>Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.</p>
@@ -243,7 +281,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/</id>
     <published>2017-04-05T13:01:29.000Z</published>
-    <updated>2017-04-19T05:53:27.000Z</updated>
+    <updated>2017-05-21T17:41:26.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png" alt=""><br>Last week, when <a href="https://nodejs.org/en/blog/" target="_blank" rel="external">Node.js</a> community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.</p>
 <a id="more"></a>
@@ -282,7 +320,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/</id>
     <published>2017-04-03T17:31:43.000Z</published>
-    <updated>2017-04-05T13:03:42.000Z</updated>
+    <updated>2017-05-21T17:34:21.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/D4i0LcT.jpg" alt=""><br>This article is about coding conventions. Everywhere I read good/better/awesome articles but very few seem to talk about the the basic things in programming.</p>
 <a id="more"></a>
