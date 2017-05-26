@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-05-21T18:18:07.000Z</updated>
+  <updated>2017-05-26T11:45:52.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,87 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Atom- An Editor of 21st Century</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/05/26/Atom-An-Editor-of-21st-Century/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/05/26/Atom-An-Editor-of-21st-Century/</id>
+    <published>2017-05-26T11:45:52.000Z</published>
+    <updated>2017-05-26T11:45:52.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://3ulsmb4eg8vz37c0vz2si64j.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/atom.png" alt=""></p>
+<p>The <a href="http://atom.io/" target="_blank" rel="external">Atom</a> I am talking about is not a small particle in the world of developers. Built and maintained by Github and the community, it is more than just an editor.</p>
+<a id="more"></a>
+<p>In our world, in the world of developers, an editor plays an amount of significant role when it comes to writing code. They might seem just a tool, as a matter of fact, they are, but for someone who takes pleasure in writing code, it is an essential piece in their setup.</p>
+<p>Using an editor is really a matter of choice, your comfort zone but the game of plugins have a big role to play. As yourself, I have tried my hands on different editors &amp; IDEs and for now I have decide to settle with Atom for its enormous amount of plugins available. Another reason for me is that it’s written in JavaScript (exactly CoffeScript &amp; since I am a JS enthusiast) and is completely free to use because of its open source normality.</p>
+<p>It is inspiring to open-source community as well. Few months back, Facebook released there version called <a href="http://nuclide.io/docs/quick-start/getting-started/" target="_blank" rel="external">Nuclide</a> which focus more on mobile development. Then there is <a href="http://electron.atom.io/" target="_blank" rel="external">Electron</a> for building cross-platform desktop application. Both are based on Atom Shell.</p>
+<p>Atom is mature in terms of plugins when comes to keeping the pace with newer technologies. When I started out with Node.js, I tried to stick with <a href="https://www.jetbrains.com/webstorm/" target="_blank" rel="external">Webstorm IDE</a> but soon Atom lured me for its support of frameworks like <a href="http://ionicframework.com/" target="_blank" rel="external">Ionic</a> (a plugin called <a href="https://atom.io/packages/ionic-preview" target="_blank" rel="external">Ionic-Preview</a> and I am still exploring) thanks to the community plugins and the other matter of fact that it’s open source.</p>
+<p><img src="https://cdn-images-1.medium.com/max/720/1*Fr51xjMu47_6XTgRD5NZRQ.jpeg" alt=""></p>
+<h2 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h2><p>There are more than 4.5k +packages published already. To view, Open the Settings view by clicking <code>Packages &gt; Settings View &gt; Open</code> in the menu bar or by using the (cmd + ,) keyboard shortcut.</p>
+<p>Atom Packages are categorized further into:</p>
+<ul>
+<li>Community packages: Packages written by people outside of GitHub’s Atom team.</li>
+<li>Core packages: These are developed by the Atom team and come bundled with Atom but you can disable them if they are no use to you.</li>
+<li>Development packages: Packages which you have on your machine and use in Atom from that local source.</li>
+</ul>
+<p>Core Packages do provide support for most favorable programming/scripting languages but if you are using something out of the box then you must check the Community packages. Chances of finding the one are in your favor there.</p>
+<p>If you are still unable to find what you are looking, you should <a href="https://www.sitepoint.com/how-to-write-a-syntax-highlighting-package-for-atom/" target="_blank" rel="external">try developing a package</a> for yourself and then if you like share it with the community.</p>
+<h2 id="TIP-Decreasing-Startup-Time"><a href="#TIP-Decreasing-Startup-Time" class="headerlink" title="TIP- Decreasing Startup Time"></a>TIP- Decreasing Startup Time</h2><p>There may come a period of time when your Atom might behave sluggishly. What will you do?</p>
+<ul>
+<li>You’ll remove all the packages (a.k.a plugins) you don’t use but for some reason you had them installed,</li>
+<li>or there isn’t much use of that particular package and you can do without it,</li>
+<li>or it was there just for fun. But before removing the packages, one must know which package is consuming how much startup time. You might want some of those unnecessary packages to stay with you if you know they are not the real culprits who are slowing down your development environment.</li>
+</ul>
+<p><img src="https://cdn-images-1.medium.com/max/720/1*eEGoeeQveSoA4LQPUJ7TOQ.png" alt=""></p>
+<p>I have seen (mostly on online forums) some developers groan about this kind of sluggishness but I haven’t met it yet. [<strong>UPDATE</strong> With Atom 1.17.0 -beta release, this sluggishness is almost nulll to feel.]</p>
+<h2 id="Recommended-Packages"><a href="#Recommended-Packages" class="headerlink" title="Recommended Packages"></a>Recommended Packages</h2><p>Most of these packages are helpful in my daily JavaScript coding environment. I think they will be helpful to you too.</p>
+<ul>
+<li><a href="https://atom.io/packages/open-recent" target="_blank" rel="external"><strong>open-recent</strong></a><em>(to continue where you left)</em></li>
+<li><a href="https://atom.io/packages/sync-settings" target="_blank" rel="external"><strong>sync-settings</strong></a><em>(do you work more than one machine? This for you)</em></li>
+<li><a href="https://atom.io/packages/ionic-preview" target="_blank" rel="external"><strong>Ionic-Preview</strong></a><em>(for people who are working Ionic Framework)</em></li>
+<li><a href="https://atom.io/packages/terminal-plus" target="_blank" rel="external"><strong>terminal-plus</strong></a><em>(terminal inside atom)</em></li>
+<li><strong>a</strong><a href="https://atom.io/packages/atom-jade" target="_blank" rel="external"><strong>tom-jade</strong></a> (<em>there is support for</em> <a href="https://atom.io/packages/language-ejs" target="_blank" rel="external"><em>ejs</em></a><em>,</em> <a href="https://atom.io/packages/atom-handlebars" target="_blank" rel="external"><em>handlebars</em></a><em>,</em> <a href="https://atom.io/packages/language-mustache" target="_blank" rel="external"><em>mustache</em></a> <em>too)</em></li>
+<li><a href="https://atom.io/packages/jade" target="_blank" rel="external"><strong>jade</strong></a><em>(if you are into jade, this is a snippets package)</em></li>
+<li><a href="https://atom.io/packages/js-hyperclick" target="_blank" rel="external"><strong>js-hyperclick</strong></a> <em>(as your project goes bigger, you will get addicted to it)</em></li>
+<li><a href="https://atom.io/packages/atom-lupa" target="_blank" rel="external"><strong>atom-lupa</strong></a> <em>(nice one if your daily musings includes React)</em></li>
+<li><a href="https://atom.io/packages/autocomplete-modules" target="_blank" rel="external"><strong>autocomplete-modules</strong></a> <em>(Node.js devs: autocompletes require statements)</em></li>
+<li><a href="https://atom.io/packages/atom-pair" target="_blank" rel="external"><strong>atom-pair</strong></a> <em>(developed by the guys at</em> <a href="http://blog.pusher.com" target="_blank" rel="external"><em>Pusher</em></a><em>, a must if you do pair coding)</em></li>
+<li><a href="https://atom.io/packages/javascript-snippets" target="_blank" rel="external"><strong>javascript-snippets</strong></a><em>(JavaScript and Node.js snippets)</em></li>
+<li><a href="https://atom.io/packages/atom-nodejs-snippets" target="_blank" rel="external"><strong>atom-nodejs-snippets</strong></a><em>(this is another Nodejs &amp; JavaScript snippet package, made by me. Supports ES6 syntax)</em></li>
+<li><a href="https://atom.io/packages/linter" target="_blank" rel="external"><strong>linter</strong></a> + <a href="https://atom.io/packages/linter-jshint" target="_blank" rel="external"><strong>linter-jshint</strong></a></li>
+<li><a href="https://atom.io/packages/atom-ternjs" target="_blank" rel="external"><strong>atom-ternjs</strong></a> <em>(JavaScript code intelligence for Atom)</em></li>
+<li><a href="https://atom.io/packages/encourage" target="_blank" rel="external"><strong>encourage</strong></a> <em>(a nice one to have,</em> <a href="https://medium.freecodecamp.com/learning-to-code-when-it-gets-dark-e485edfb58fd#.1o6f4wmx4" target="_blank" rel="external"><em>if you are having a dark day</em></a><em>, fun)</em></li>
+</ul>
+<p>The main advantage of an editor like Atom is that you can highly customize it. You can hack it, make your own packages, or use the one that are already there in the community and bend them as per your needs.</p>
+<h2 id="Lastly"><a href="#Lastly" class="headerlink" title="Lastly"></a>Lastly</h2><p><img src="https://cdn-images-1.medium.com/max/720/1*mYZtJ4HlZAeJKj-CW0CP7g.jpeg" alt=""></p>
+<p>Note: At the time of writing this post, Webstorm IDE did not have support for frameworks like Ionic and the latest Atom Version is 1.8.0.</p>
+<hr>
+<p><strong>ORIGINALLY PUBLISHED</strong>: July, 14, 2016</p>
+<p><em>I haven’t covered all the plugins that I use but what I think are necessary. What about you? I would love to hear about the plugins you use.</em></p>
+<hr>
+<p><strong>See My Packages for Atom:</strong></p>
+<ul>
+<li><a href="https://atom.io/packages/jade" target="_blank" rel="external">Jade</a></li>
+<li><a href="https://atom.io/packages/atom-nodejs-snippets" target="_blank" rel="external">Nodejs-Snippets</a></li>
+<li><a href="https://atom.io/packages/expressjs" target="_blank" rel="external">Expressjs</a></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://3ulsmb4eg8vz37c0vz2si64j.wpengine.netdna-cdn.com/wp-content/uploads/2015/09/atom.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;The &lt;a href=&quot;http://atom.io/&quot;&gt;Atom&lt;/a&gt; I am talking about is not a small particle in the world of developers. Built and maintained by Github and the community, it is more than just an editor.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://amandeepmittal.github.io/blog/tags/javascript/"/>
+    
+      <category term="web development" scheme="http://amandeepmittal.github.io/blog/tags/web-development/"/>
+    
+      <category term="atom" scheme="http://amandeepmittal.github.io/blog/tags/atom/"/>
+    
+  </entry>
   
   <entry>
     <title>Concepts in Angularjs</title>
