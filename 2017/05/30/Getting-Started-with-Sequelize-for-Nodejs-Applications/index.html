@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>How Node.js Works? | Aman Mittal&#39;s Blog</title>
+    <title>Getting Started with Sequelize for Nodejs Applications | Aman Mittal&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
+    <meta name="description" content="Introduction to ORMORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How Node.js Works?">
-<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/index.html">
+<meta property="og:title" content="Getting Started with Sequelize for Nodejs Applications">
+<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/index.html">
 <meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png">
-<meta property="og:updated_time" content="2017-05-21T17:34:22.000Z">
+<meta property="og:description" content="Introduction to ORMORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for d">
+<meta property="og:image" content="http://i.imgur.com/jIaEOEh.png">
+<meta property="og:updated_time" content="2017-05-30T09:37:43.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How Node.js Works?">
-<meta name="twitter:description" content="When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Ev">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png">
+<meta name="twitter:title" content="Getting Started with Sequelize for Nodejs Applications">
+<meta name="twitter:description" content="Introduction to ORMORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for d">
+<meta name="twitter:image" content="http://i.imgur.com/jIaEOEh.png">
     
 
     
@@ -208,7 +208,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-How-Node-js-Works" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Getting-Started-with-Sequelize-for-Nodejs-Applications" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,7 +216,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            How Node.js Works?
+            Getting Started with Sequelize for Nodejs Applications
         </h1>
     
 
@@ -225,8 +225,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/19/How-Node-js-Works/">
-            <time datetime="2017-04-19T05:54:37.000Z" itemprop="datePublished">2017-04-19</time>
+        <a href="/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/">
+            <time datetime="2017-05-30T09:37:43.000Z" itemprop="datePublished">2017-05-30</time>
         </a>
     </div>
 
@@ -235,7 +235,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
+        <a class="tag-link" href="/blog/tags/MySQL/">MySQL</a>, <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/blog/tags/sequelize/">sequelize</a>
     </div>
 
                     </div>
@@ -246,29 +246,23 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
-<p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
+            <p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
+<h2 id="Introduction-to-ORM"><a href="#Introduction-to-ORM" class="headerlink" title="Introduction to ORM"></a>Introduction to ORM</h2><p>ORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for developers from basic ones like saving time and effort and rather focusing on business logic. The code is robust instead of redundant. ORM helps in managing queries for multiple tables in an effective manner. Lastly, an ORM is (like [sequelize(<a href="http://docs.sequelizejs.com/en/v3/" target="_blank" rel="external">http://docs.sequelizejs.com/en/v3/</a>)]) is capable to connect with different databases (which comes in handy when switching from one database to another).</p>
 <a id="more"></a>
-<p>If you are familiar with Node.js, it is a known fact that Node.js is single threaded. If you are from programming/computer science background you know what a thread means. Consider this scenario: traditionally — an I/O request comes to a web server and is assigned to an available thread, and for each concurrent connection there is one thread available. That request is handled on the specific thread until it is fulfilled and the response is sent.</p>
-<p>This scenario is a perfect example of <strong>Blocking</strong> I/O because while handling a particular request by a specific thread, there will be some idle time when the operations are being done (such as retrieving a file, opening it, reading it, etc.). A single thread consumes memory. A longer running thread for each connection and then sitting idly for some amount of time is not considered an efficient way in the world of <a href="https://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">Node.js</a>.</p>
-<h2 id="Enter-Reactor-Pattern-Heart-of-Node-js"><a href="#Enter-Reactor-Pattern-Heart-of-Node-js" class="headerlink" title="Enter Reactor Pattern- Heart of Node.js"></a>Enter Reactor Pattern- Heart of Node.js</h2><p><strong>Reactor Pattern</strong> is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a callback function) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a demultiplexer.</p>
-<p>This demultiplexer is a notification interface that is used to handle concurrency in <em>non-blocking I/O</em> mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the <strong>Event Queue</strong>, which we often hear. When a request is collected by the demultiplexer, it returns the control back to the system and does not blocks the I/O. At the same time, there is an <strong>Event Loop</strong> which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.</p>
-<p>The callback function further mostly have other callbacks associated within representing some asynchronous operations. These operations are inserted in the Event Queue by the demultiplexer and are ready to be processed once the Event Loop iterates over them. That is why calls to other operations must be asynchronous.</p>
-<p>When all the items in the Event Queue are processed and there are no pending operations left, Node.js terminates the application automatically.</p>
-<h2 id="Building-Blocks-of-Node-js"><a href="#Building-Blocks-of-Node-js" class="headerlink" title="Building Blocks of Node.js"></a>Building Blocks of Node.js</h2><ul>
-<li>Reactor Pattern</li>
-<li>libuv</li>
-<li>A set of Bindings</li>
-<li>Chrome’s V8</li>
-<li>Core JS Library</li>
-</ul>
-<h3 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h3><p>Pronounced as “lib u v”, is library written in C language to make Node.js compatible with every OS and provide the non-blocking I/O behaviour. <a href="http://docs.libuv.org/en/v1.x/" target="_blank" rel="external">libuv</a> is a low-level engine that implements reactor pattern thus providing an API for creating the Event Loop, managing an Event Queue and running asynchronous I/O operations. It is built specifically to provide a unified experience over different Operating Systems.</p>
-<h3 id="Need-for-libuv"><a href="#Need-for-libuv" class="headerlink" title="Need for libuv?"></a>Need for libuv?</h3><p>Each operating system has its own interface for the demultiplexer. Such as <a href="https://en.wikipedia.org/wiki/Kqueue" target="_blank" rel="external">Kqueue</a> for Mac OS X, <a href="https://en.wikipedia.org/wiki/Input/output_completion_port" target="_blank" rel="external">IOCP</a> for Windows and <a href="https://en.wikipedia.org/wiki/Epoll" target="_blank" rel="external">Epoll</a> for Linux. Different multiplexers will behave differently when handling an I/O request. And then, each I/O operation can differ in its behaviour within the same operating system. This creates an inconsistency and to overcome this inconsistency <em>libuv</em> is the solution.</p>
-<p><em>I am not going to talk about internal workings of libuv here, not an expert on that, myself. For more info on libuv check their <a href="http://docs.libuv.org/" target="_blank" rel="external">docs</a> or this <a href="http://www.slideshare.net/saghul/libuv-nodejs-and-everything-in-between" target="_blank" rel="external">slide</a> by Saúl Ibarra Corretgé <a href="https://twitter.com/saghul" target="_blank" rel="external">(@saghul)</a> is a good start.</em></p>
-<p><a href="https://github.com/libuv/libuv" target="_blank" rel="external">Also, libuv is independently maintained by awesome developers.</a></p>
-<h3 id="Set-of-Bindings"><a href="#Set-of-Bindings" class="headerlink" title="Set of Bindings"></a>Set of Bindings</h3><p>These set of bindings are responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.</p>
-<h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><p>It’s a <a href="https://developers.google.com/v8/" target="_blank" rel="external">runtime engine developed by Google for Chrome</a> browser for JavaScript. It is the reason Node.js is fast and efficient.</p>
-<h3 id="Core-Library"><a href="#Core-Library" class="headerlink" title="Core Library"></a>Core Library</h3><p>This is a JavaScript library that implements high-level Node.js API <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">(a.k.a. node-core)</a>.</p>
+<h2 id="Getting-Started-with-Sequelize"><a href="#Getting-Started-with-Sequelize" class="headerlink" title="Getting Started with Sequelize"></a>Getting Started with Sequelize</h2><p><a href="https://github.com/sequelize/sequelize" target="_blank" rel="external">Sequelize</a> is a promise-based ORM for Node.js. Sequelize is easy to learn and has dozens of cool features like synchronization, association, validation, etc. It also has support for PostgreSQL, MySQL, MariaDB, SQLite, and MSSQL. I am assuming you have some form of SQL database service started on your machine. I am currently using MySQL.</p>
+<h3 id="Installation"><a href="#Installation" class="headerlink" title="Installation"></a>Installation</h3><p>Sequelize is available via npm.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$ npm install --save sequelize</div><div class="line"></div><div class="line"># And one of the following:</div><div class="line">$ npm install --save pg pg-hstore</div><div class="line">$ npm install --save mysql // For both mysql and mariadb dialects</div><div class="line">$ npm install --save sqlite3</div><div class="line">$ npm install --save tedious // MSSQL</div></pre></td></tr></table></figure>
+<h3 id="Setting-up-a-Connection"><a href="#Setting-up-a-Connection" class="headerlink" title="Setting up a Connection"></a>Setting up a Connection</h3><p>Sequelize does setup a connection between the rest api/application and your SQL database. To setup basic connection between the two:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(<span class="string">'database'</span>, <span class="string">'username'</span>, <span class="string">'password'</span>, &#123;</div><div class="line">  <span class="attr">host</span>: <span class="string">'localhost'</span>,</div><div class="line">  <span class="attr">dialect</span>: <span class="string">'mysql'</span>|<span class="string">'mariadb'</span>|<span class="string">'sqlite'</span>|<span class="string">'postgres'</span>|<span class="string">'mssql'</span>,   <span class="comment">//choose anyone between them</span></div><div class="line"></div><div class="line">  <span class="comment">// To create a pool of connections</span></div><div class="line">  pool: &#123;</div><div class="line">    <span class="attr">max</span>: <span class="number">5</span>,</div><div class="line">    <span class="attr">min</span>: <span class="number">0</span>,</div><div class="line">    <span class="attr">idle</span>: <span class="number">10000</span></div><div class="line">  &#125;,</div><div class="line"></div><div class="line">  <span class="comment">// Fpr SQLite only</span></div><div class="line">  storage: <span class="string">'path/to/database.sqlite'</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h3 id="How-do-I-setup-my-Sequelize-Connection"><a href="#How-do-I-setup-my-Sequelize-Connection" class="headerlink" title="How do I setup my Sequelize Connection?"></a>How do I setup my Sequelize Connection?</h3><p>For the sake brevity, I like to divide code into modules. After all, the Unix philosophy of <a href="https://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/"><em>one  program/module should do one thing</em></a> is major part of the philosophy behind writing code in JavaScript (and using Node.js as a server side platform) these days.</p>
+<p>I start with <code>config.json</code>/<code>config.js</code> file in the root of my application/api folder in which I define the general constraints needed to setup the connection with database:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"development"</span>: &#123;</div><div class="line">    <span class="attr">"username"</span>: <span class="string">"root"</span>,</div><div class="line">    <span class="attr">"password"</span>: <span class="string">"root"</span>,</div><div class="line">    <span class="attr">"database"</span>: <span class="string">"articles"</span>,</div><div class="line">    <span class="attr">"host"</span>: <span class="string">"localhost"</span>,</div><div class="line">    <span class="attr">"dialect"</span>: <span class="string">"mysql"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"test"</span>: &#123;</div><div class="line">    <span class="attr">"username"</span>: <span class="string">"root"</span>,</div><div class="line">    <span class="attr">"password"</span>: <span class="string">"root"</span>,</div><div class="line">	<span class="attr">"database"</span>: <span class="string">"articles"</span>,</div><div class="line">    <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"dialect"</span>: <span class="string">"mysql"</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"production"</span>: &#123;</div><div class="line">    <span class="attr">"username"</span>: <span class="string">"root"</span>,</div><div class="line">    <span class="attr">"password"</span>: <span class="string">"root"</span>,</div><div class="line">	<span class="attr">"database"</span>: <span class="string">"articles"</span>,</div><div class="line">    <span class="attr">"host"</span>: <span class="string">"127.0.0.1"</span>,</div><div class="line">    <span class="attr">"dialect"</span>: <span class="string">"mysql"</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>You can do this in your <code>.env</code> file if you like to follow that pattern. For more info on this see <a href="https://www.npmjs.com/package/dotenv" target="_blank" rel="external"><code>dotenv</code></a>.</p>
+<p>After defining the configuration variables, in my <code>models/</code> folder or where I define schema of tables in the database at application level, I create the connection in an <code>index.js</code> file:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"></div><div class="line"><span class="keyword">const</span> fs        = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"><span class="keyword">const</span> path      = <span class="built_in">require</span>(<span class="string">'path'</span>);</div><div class="line"><span class="keyword">const</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</div><div class="line"><span class="keyword">const</span> basename  = path.basename(<span class="built_in">module</span>.filename);</div><div class="line"><span class="keyword">const</span> env       = process.env.NODE_ENV || <span class="string">'development'</span>;</div><div class="line"><span class="keyword">const</span> config    = <span class="built_in">require</span>(__dirname + <span class="string">'/config.json'</span>)[env];</div><div class="line"><span class="keyword">const</span> db        = &#123;&#125;;</div><div class="line"></div><div class="line"><span class="keyword">if</span> (config.use_env_variable) &#123;</div><div class="line">  <span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(process.env[config.use_env_variable]);</div><div class="line">&#125; <span class="keyword">else</span> &#123;</div><div class="line">  <span class="keyword">const</span> sequelize = <span class="keyword">new</span> Sequelize(config.database, config.username, config.password, config);</div><div class="line">&#125;</div><div class="line"></div><div class="line">fs</div><div class="line">  .readdirSync(__dirname)</div><div class="line">  .filter(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">return</span> (file.indexOf(<span class="string">'.'</span>) !== <span class="number">0</span>) &amp;&amp; (file !== basename) &amp;&amp; (file.slice(<span class="number">-3</span>) === <span class="string">'.js'</span>);</div><div class="line">  &#125;)</div><div class="line">  .forEach(<span class="function">(<span class="params">file</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">const</span> model = sequelize[<span class="string">'import'</span>](path.join(__dirname, file));</div><div class="line">    db[model.name] = model;</div><div class="line">  &#125;);</div><div class="line"></div><div class="line"><span class="built_in">Object</span>.keys(db).forEach(<span class="function">(<span class="params">modelName</span>) =&gt;</span> &#123;</div><div class="line">  <span class="keyword">if</span> (db[modelName].associate) &#123;</div><div class="line">    db[modelName].associate(db);</div><div class="line">  &#125;</div><div class="line">&#125;);</div><div class="line"></div><div class="line">sequelize</div><div class="line">		.authenticate()</div><div class="line">		.then(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'Connection has been established successfully.'</span>);</div><div class="line">		&#125;)</div><div class="line">		.catch(<span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</div><div class="line">			<span class="built_in">console</span>.log(<span class="string">'Unable to connect to the database:'</span>, err);</div><div class="line">		&#125;);</div><div class="line"></div><div class="line">db.sequelize = sequelize;</div><div class="line">db.Sequelize = Sequelize;</div><div class="line"></div><div class="line"><span class="comment">// Import Models such that I can use them in the api just by importing 'db'</span></div><div class="line">db.user = <span class="built_in">require</span>(<span class="string">'./user'</span>)(sequelize, Sequelize);</div><div class="line">db.admin = <span class="built_in">require</span>(<span class="string">'./admin'</span>)(sequelize, Sequelize);</div><div class="line">db.articles = <span class="built_in">require</span>(<span class="string">'./articles'</span>)(sequelize, Sequelize);</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = db;</div></pre></td></tr></table></figure>
+<p>It’s important to notice that I am exposing <code>db</code> object such that it contains every model/table schema definition and I just have to import the <code>db</code> object to apply operations on specific database tables using it.</p>
+<p>This setup can be auto-geenrated with the help of <a href="https://github.com/sequelize/cli" target="_blank" rel="external">Sequelize CLI</a> tool that helps in bootstrapping a new project in an effective manner (like the above) and handle database migrations directly from the terminal.</p>
+<h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Sequelize is feature rich ORM for Node.js. It has a documentation that at times may not provide direct solutions to your problems but there always Github issues for that. What I like about is its Promise based control flow. Coming from NoSQL background (and using MongoDB), understanding Sequelize really took less time. Most of the query based models are quite similar to that in MongoDB (especially the CRUD operations). I am looking for a brighter, more improved documentation and ease of support from Sequelize.</p>
 
         
         </div>
@@ -334,7 +328,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/">Comments</a>
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/">Comments</a>
     
 
         </footer>
@@ -343,19 +337,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/blog/2017/04/28/Eslint-with-Nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    How to start using ESLint in Node.js Applications?
-                
-            </div>
-        </a>
     
-    
-        <a href="/blog/2017/04/14/Modules-in-Angularjs/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2017/05/26/Atom-An-Editor-of-21st-Century/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Modules in Angularjs</div>
+            <div class="article-nav-title">Atom- An Editor of 21st Century</div>
         </a>
     
 </nav>
@@ -548,9 +533,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/';
+            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/';
         
-        this.page.identifier = 'How-Node-js-Works';
+        this.page.identifier = 'Getting-Started-with-Sequelize-for-Nodejs-Applications';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
