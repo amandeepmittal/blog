@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-05-30T09:59:20.000Z</updated>
+  <updated>2017-05-30T16:03:49.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/</id>
     <published>2017-05-30T09:37:43.000Z</published>
-    <updated>2017-05-30T09:59:20.000Z</updated>
+    <updated>2017-05-30T16:03:49.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
 <h2 id="Introduction-to-ORM"><a href="#Introduction-to-ORM" class="headerlink" title="Introduction to ORM"></a>Introduction to ORM</h2><p>ORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for developers from basic ones like saving time and effort and rather focusing on business logic. The code is robust instead of redundant. ORM helps in managing queries for multiple tables in an effective manner. Lastly, an ORM (like <a href="http://docs.sequelizejs.com/en/v3/" target="_blank" rel="external">sequelize</a>) is capable to connect with different databases (which comes in handy when switching from one database to another).</p>
@@ -49,11 +49,11 @@
     </summary>
     
     
+      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
+    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
       <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
-    
-      <category term="MySQL" scheme="http://amandeepmittal.github.io/blog/tags/MySQL/"/>
     
   </entry>
   
@@ -242,11 +242,11 @@
     </summary>
     
     
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
       <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
