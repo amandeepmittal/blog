@@ -51,9 +51,9 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="MySQL" scheme="http://amandeepmittal.github.io/blog/tags/MySQL/"/>
-    
       <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
+    
+      <category term="MySQL" scheme="http://amandeepmittal.github.io/blog/tags/MySQL/"/>
     
   </entry>
   
@@ -244,11 +244,11 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
-    
       <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
@@ -312,9 +312,9 @@
     </summary>
     
     
-      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
