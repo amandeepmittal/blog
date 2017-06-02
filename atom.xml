@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-05-30T16:03:49.000Z</updated>
+  <updated>2017-06-02T12:37:17.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>What&#39;s new in npm 5</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/02/What-s-new-in-npm-5/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/02/What-s-new-in-npm-5/</id>
+    <published>2017-06-02T12:37:17.000Z</published>
+    <updated>2017-06-02T12:37:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/FTuFdex.png" alt=""></p>
+<p>Last month, in the very last week, <a href="https://npmjs.com" target="_blank" rel="external">npm</a> announced the new major release for the JavaScript package manager. <strong>5.0.0</strong>, hopefully, will be shipped with upcoming version of <a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a> as well. It seems a big step towards providing better tooling with significantly improved performance as quite a lot of developers made a switch to yarn, just because it could download the packages from the registery at a faster rate. However, this point is debatable, so let’s not get into it.</p>
+<a id="more"></a>
+<p>Some of the major changes which I want to hightlight in this article and am eagerly looking forward to are:</p>
+<ul>
+<li><code>npm will --save</code> is available by default now. See the <a href="https://twitter.com/maybekatz/status/859229741676625920" target="_blank" rel="external">demo</a> with your own eyes.</li>
+<li>Running <code>npm</code> while offline will no longer insist on retrying network requests. npm will now immediately fall back to cache if possible, or fail.</li>
+<li><code>--cache-min</code> and <code>--cache-max</code> have been deprecated, so, existing npm caches will no longer be used.</li>
+<li>A new <code>--prefer-offline</code> option will make npm skip any conditional requests for stale cache data, and only hit the network if something is missing from the cache.</li>
+<li>A new <code>--prefer-online</code> option that will force npm to revalidate cached data, ignoring any staleness checks, and refreshing the cache with revalidated, fresh data.</li>
+<li>A new <code>--offline</code> option will force npm to use the cache or exit. It will error with an <code>ENOTCACHED</code> code if anything it tries to install isn’t already in the cache.</li>
+<li>A standardised lockfile feature is available by default and will be for cross-package-manager compatibility (<code>package-lock.json</code>), and a new format and semantics for shrinkwrap.</li>
+<li>Downloads for large packages are streamed in and out of disk. npm is now able to install packages of any size without running out of memory.</li>
+<li>Last, it’s a bit faster. <a href="https://twitter.com/maybekatz/status/865393382260056064" target="_blank" rel="external">Demo</a></li>
+</ul>
+<p>Hopefully, they update their docs quickly with this new update and more users like me will be able to switch or access much of these key features. For detailed look into npm5’s features have a look at their <a href="http://blog.npmjs.org/post/161081169345/v500" target="_blank" rel="external">official blog post</a> in which they have listed every other breaking change coming with the new release.</p>
+<p>To start using the latest version of npm, you can in your terminal window or preferable shell:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g npm@next</div><div class="line"></div><div class="line"># Or</div><div class="line"></div><div class="line">npm install -g npm@latest</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/FTuFdex.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Last month, in the very last week, &lt;a href=&quot;https://npmjs.com&quot;&gt;npm&lt;/a&gt; announced the new major release for the JavaScript package manager. &lt;strong&gt;5.0.0&lt;/strong&gt;, hopefully, will be shipped with upcoming version of &lt;a href=&quot;https://nodejs.org/en/&quot;&gt;Nodejs&lt;/a&gt; as well. It seems a big step towards providing better tooling with significantly improved performance as quite a lot of developers made a switch to yarn, just because it could download the packages from the registery at a faster rate. However, this point is debatable, so let’s not get into it.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
+      <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>Getting Started with Sequelize for Nodejs Applications</title>
@@ -242,11 +282,11 @@
     </summary>
     
     
+      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
+    
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
@@ -437,69 +477,6 @@
     
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript Code Conventions</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/04/03/JavaScript-Code-Conventions/</id>
-    <published>2017-04-03T17:31:43.000Z</published>
-    <updated>2017-05-21T17:34:21.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/D4i0LcT.jpg" alt=""><br>This article is about coding conventions. Everywhere I read good/better/awesome articles but very few seem to talk about the the basic things in programming.</p>
-<a id="more"></a>
-<p>Like the coding conventions used by programmers in their work. I am a JavaScript enthusiast and never once did I came across a good article on basic conventions and guidelines to write code that is helpful for me and others to read my code.<br>Thus, this is my attempt and this article contains some general coding conventions as well as some specific guidelines only applicable to JavaScript.</p>
-<p>Thus, this is my attempt and this article contains some general coding conventions as well as some specific guidelines only applicable to <strong>JavaScript</strong>.</p>
-<h2 id="So-what-are-Code-Conventions"><a href="#So-what-are-Code-Conventions" class="headerlink" title="So what are Code Conventions?"></a>So what are Code Conventions?</h2><p>These are the guidelines about programming practices, file and directory structure and commenting.</p>
-<p>Now you may be wondering why do you need guidelines as for files and directory structure? Well, to keep simple and when working in a team you have to follow some rules for a specific file structure for that application. Otherwise it will be huge mess.</p>
-<h2 id="Style-Guidelines"><a href="#Style-Guidelines" class="headerlink" title="Style Guidelines"></a>Style Guidelines</h2><p>They are the type of <strong>Code Convention</strong> that includes the layout of code within a file.</p>
-<h3 id="Indentation"><a href="#Indentation" class="headerlink" title="Indentation"></a>Indentation</h3><p>The first thing to do when writing code in a file is how to handle <strong>indentation</strong>.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(num===<span class="number">1</span>)&#123;</div><div class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(array[i]!==<span class="number">0</span>)&#123;</div><div class="line">      <span class="comment">//some code</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(array[i]===array.length)&#123;</div><div class="line">      <span class="comment">// code</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Observe in the previous example there is a flow. This is what an indentation is all about. It makes the program readable. The <em>else if</em> statement is used for the if statement inside the <em>for loop</em> and not the outside <em>if</em> statement.</p>
-<p>Two ways to achieve indentation:</p>
-<ul>
-<li>using tabs</li>
-<li>using spaces</li>
-</ul>
-<p><strong>Using Tabs</strong><br>For each indentation level, use one tab character. Thus, the second level will have two tab characters and so on.</p>
-<p><strong>Using Space</strong><br>Each indentation level is made up of multiple spaces. The levels contains spaces in pairs, like two spaces for first level, and four spaces for second level and so on.</p>
-<p>The <strong>advantage</strong> of using spaces over tabs is that all text editors are configured according to spaces and is treated exactly the same. The <strong>disadvantage</strong> here is to put spaces in each line. Thankfully, we are in an era where text editors are smart enough and they automatically do indentation.</p>
-<h3 id="Avoid-ASI-Automatic-Semicolon-Insertion"><a href="#Avoid-ASI-Automatic-Semicolon-Insertion" class="headerlink" title="Avoid ASI Automatic Semicolon Insertion"></a>Avoid ASI Automatic Semicolon Insertion</h3><p>Avoiding semicolons is possible and if JavaScript has a mechanism called ASI, why the hell to care about semicolons? If you are comfortable with ASI carry on. But the rules of ASI are complex and using your time with in writing code rather than worrying about ASI is better.</p>
-<p>It causes errors and sometimes things won’t work because the JavaScript parser may read things different from the way they are written.</p>
-<p>Also, semicolons improves the readability of the code for other programmers too. If you are working collaboratively, it’s a great help.</p>
-<h3 id="Avoid-Horizontal-Scrolling"><a href="#Avoid-Horizontal-Scrolling" class="headerlink" title="Avoid Horizontal Scrolling"></a>Avoid Horizontal Scrolling</h3><p>The recommended length of code in a line is 80 characters. Even though the text editors have become smart, the length of 80 characters has is still used as a convention.</p>
-<h3 id="Blank-Lines-are-not-harmful"><a href="#Blank-Lines-are-not-harmful" class="headerlink" title="Blank Lines are not harmful"></a>Blank Lines are not harmful</h3><p>Using blank lines to separate unrelated lines of code. It improves readability.</p>
-<p>Without blank lines:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(num===<span class="number">1</span>)&#123;</div><div class="line">  <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;array.length;i++)&#123;</div><div class="line">    <span class="keyword">if</span>(array[i]!==<span class="number">0</span>)&#123;</div><div class="line">      <span class="comment">//some code</span></div><div class="line">    &#125;</div><div class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(array[i]===array.length)&#123;</div><div class="line">      <span class="comment">// code</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>With blank lines:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">if(num===1)&#123;</div><div class="line">  for(i=0;i&lt;array.length;i++)&#123;</div><div class="line">    if(array[i]!==0)&#123;</div><div class="line">      //some code</div><div class="line">    &#125;</div><div class="line">    else if(array[i]===array.length)&#123;</div><div class="line">      // code</div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h3 id="Naming-Convention"><a href="#Naming-Convention" class="headerlink" title="Naming Convention"></a>Naming Convention</h3><p>ECMAScript uses camelCase convention. You should too when naming Variables and Functions. And try to use meaningful names for those variables and functions and keep them short.</p>
-<h4 id="Function-Naming"><a href="#Function-Naming" class="headerlink" title="Function Naming"></a>Function Naming</h4><p>In JS, all we do is make functions in form of callbacks andevents. Author of <em>Maintainable Javascript</em> <strong>Nicholas Zakas</strong> introduces some common conventions for functions. I find these helpful:</p>
-<ul>
-<li>can Function that returns a boolean</li>
-<li>has Function that returns a boolean</li>
-<li>is Function that returns a boolean</li>
-<li>get Function that returns a nonboolean</li>
-<li>set Function that is used to save a value</li>
-</ul>
-<h4 id="Constructors"><a href="#Constructors" class="headerlink" title="Constructors"></a>Constructors</h4><p>Constructors are functions too and are used to create objects via new operator. But avoid using <em>camelCase</em> and use <em>PascalCase</em> instead.</p>
-<p>It is helpful since JavaScript uses the same for naming pre-defined constructors.</p>
-<h3 id="Comments"><a href="#Comments" class="headerlink" title="Comments"></a>Comments</h3><p>For single-line comments, I observed this when using JSHint, after // use a space between them(the two slashes) and the comment.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// Single-Line Comment</span></div></pre></td></tr></table></figure>
-<blockquote><p>Following all conventions of can be hard and a stressful matter at times when you are focusing on the logic part of the code. Thus, there is an alternative which works for me most of the time, is the Beautify package that I use in the text editor Atom and I am sure it is available for the majority of other text editors.</p>
-</blockquote>
-<a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe to my newsletter</a>
-<p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on January 8, 2016.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/D4i0LcT.jpg&quot; alt=&quot;&quot;&gt;&lt;br&gt;This article is about coding conventions. Everywhere I read good/better/awesome articles but very few seem to talk about the the basic things in programming.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="javascript" scheme="http://amandeepmittal.github.io/blog/tags/javascript/"/>
     
   </entry>
   
