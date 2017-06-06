@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-02T12:37:17.000Z</updated>
+  <updated>2017-06-06T12:49:48.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Remove node_modules recursively</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/06/Remove-node-modules-recursively/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/06/Remove-node-modules-recursively/</id>
+    <published>2017-06-06T12:49:48.000Z</published>
+    <updated>2017-06-06T12:49:48.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/2UOMNka.png" alt=""></p>
+<p><code>node_modules</code> tend to take a lot of space in your local system especially if you work with Node.js or related frameworks (such as client side frameworks: React or Angular). They are the part and parcel of modern day JavaScript applications and workflow.</p>
+<a id="more"></a>
+<p>Each day <code>npm</code> registry is getting around <a href="https://twitter.com/seldo/status/864298310785310720" target="_blank" rel="external">350 million downloads</a> daily, at the current time of writing this post. That’s almost 2.2 billion downloads per week and you can take the calculation further.</p>
+<p>Here’s Laurie Voss <a href="https://twitter.com/seldo" target="_blank" rel="external">(@seldo)</a> <a href="https://twitter.com/seldo/status/864298310785310720" target="_blank" rel="external">tweet</a>, sharing the aforementioned details:</p>
+<p><img src="https://pbs.twimg.com/media/C_6an0cUAAAUbul.jpg" alt=""></p>
+<p>Nonetheless, after all your efforts are paid of and everything is deployed and is over cloud, either Github or some deployment service you or your client prefers, I think it will be generous to remove <code>node_modules</code> that take useful space on our local machines (especially, Mac users with limited GigaBytes of SSD).</p>
+<p>There’s a simple command that you can run in your terminal either in a folder or from the root.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;node_modules&quot; -exec rm -rf &apos;&#123;&#125;&apos; +</div></pre></td></tr></table></figure>
+<p>This will delete <code>node_modules</code> folder in every local repository/directory that’s on your system so take precaution or exclude those projects that you are currently working on.</p>
+<p>However, don’t panic. Everything can be back to normal just by going into the project’s directory and running package installing command:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
+<p>I have used this command earlier today it saved me up to 9 GB of space from local system over several projects.</p>
+<p>I even replaced <code>node_modules</code> with <code>bower_components</code> to do the same thing:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;bower_components&quot; -exec rm -rf &apos;&#123;&#125;&apos; +</div></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/2UOMNka.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;node_modules&lt;/code&gt; tend to take a lot of space in your local system especially if you work with Node.js or related frameworks (such as client side frameworks: React or Angular). They are the part and parcel of modern day JavaScript applications and workflow.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
+      <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
+    
+  </entry>
   
   <entry>
     <title>What&#39;s new in npm 5</title>
@@ -438,45 +477,6 @@
     
     
       <category term="angularjs" scheme="http://amandeepmittal.github.io/blog/tags/angularjs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>The Node Way: Philosophy of a Platform</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/</id>
-    <published>2017-04-05T13:01:29.000Z</published>
-    <updated>2017-05-21T17:41:26.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png" alt=""><br>Last week, when <a href="https://nodejs.org/en/blog/" target="_blank" rel="external">Node.js</a> community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.</p>
-<a id="more"></a>
-<p>Every platform has its own philosophy, its own set of rules, its own principles and guidelines. This is necessary for the evolution of a platform and is important for developing an application using that platform. (Otherwise, we all can get carried away.) Node.js has its own philosophy, since its a platform, and it manages to find a middleground between JavaScript and UNIX.</p>
-<p>Two of the most important principles of UNIX that are adaptable in Node.js are:</p>
-<ul>
-<li>Modularity, keeping simple parts short, connected with clean interfaces.</li>
-<li>A program should do one thing and it should do that awesomely.</li>
-</ul>
-<p>Other rules described by Eric Steven Raymond in <a href="http://www.catb.org/esr/writings/taoup/html/index.html" target="_blank" rel="external">The Art of UNIX Programming</a> might fit to some extent but the two aforementioned are necessary to use Node.js pragmatically.</p>
-<p>In Node.js this pragmaticism is provided the by a <strong>‘module’</strong>. A module is the fundamental to structure the code of a program in Node.js. Module is also the building block of a package. (A package is any application or reusable libraries).</p>
-<p>The principle here is to design small modules in terms of code and in terms of application scope. This principle provides:</p>
-<ul>
-<li>reusability of code</li>
-<li>easier to understand the code</li>
-<li>thus, making it simple to test and maintain</li>
-</ul>
-<p>Another important aspect in the Node Philosophy is the dependency of each package. Writing a Node.js application, one tends to use a lot of packages <em>(which is the genesis of Node.js Ecosystem: npm)</em> and this might create a common problem known as: dependency hell. To overcome this conflict, Node.js manages dependencies of each installed package to have its own separate set of dependencies.</p>
-<hr>
-<p><strong>ORIGINALLY PUBLISHED</strong> at Medium.com on March 10, 2016.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/720/1*7xUxphx7WwttvlFu5gVvVw.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;Last week, when &lt;a href=&quot;https://nodejs.org/en/blog/&quot;&gt;Node.js&lt;/a&gt; community introduced its logo, it got me into thinking of why this technology as fresh in my mind as when I was first introduced to it a few months back. Why is that spark still ignited in the back of my head? The answer to this is the philosophy behind the technology of Node.js platform.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
   </entry>
   
