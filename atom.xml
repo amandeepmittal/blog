@@ -59,7 +59,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/06/02/What-s-new-in-npm-5/"/>
     <id>http://amandeepmittal.github.io/blog/2017/06/02/What-s-new-in-npm-5/</id>
     <published>2017-06-02T12:37:17.000Z</published>
-    <updated>2017-06-02T12:37:17.000Z</updated>
+    <updated>2017-06-08T11:26:19.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/FTuFdex.png" alt=""></p>
 <p>Last month, in the very last week, <a href="https://npmjs.com" target="_blank" rel="external">npm</a> announced the new major release for the JavaScript package manager. <strong>5.0.0</strong>, hopefully, will be shipped with upcoming version of <a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a> as well. It seems a big step towards providing better tooling with significantly improved performance as quite a lot of developers made a switch to yarn, just because it could download the packages from the registery at a faster rate. However, this point is debatable, so let’s not get into it.</p>
@@ -78,7 +78,10 @@
 </ul>
 <p>Hopefully, they update their docs quickly with this new update and more users like me will be able to switch or access much of these key features. For detailed look into npm5’s features have a look at their <a href="http://blog.npmjs.org/post/161081169345/v500" target="_blank" rel="external">official blog post</a> in which they have listed every other breaking change coming with the new release.</p>
 <p>To start using the latest version of npm, you can in your terminal window or preferable shell:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g npm@next</div><div class="line"></div><div class="line"># Or</div><div class="line"></div><div class="line">npm install -g npm@latest</div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">npm install -g npm@next</div><div class="line"></div><div class="line"># Or</div><div class="line"></div><div class="line">npm install -g npm@latest</div></pre></td></tr></table></figure>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
+]]></content>
     
     <summary type="html">
     
@@ -99,7 +102,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/</id>
     <published>2017-05-30T09:37:43.000Z</published>
-    <updated>2017-05-30T16:03:49.000Z</updated>
+    <updated>2017-06-08T11:25:41.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
 <h2 id="Introduction-to-ORM"><a href="#Introduction-to-ORM" class="headerlink" title="Introduction to ORM"></a>Introduction to ORM</h2><p>ORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for developers from basic ones like saving time and effort and rather focusing on business logic. The code is robust instead of redundant. ORM helps in managing queries for multiple tables in an effective manner. Lastly, an ORM (like <a href="http://docs.sequelizejs.com/en/v3/" target="_blank" rel="external">sequelize</a>) is capable to connect with different databases (which comes in handy when switching from one database to another).</p>
@@ -118,6 +121,8 @@
 <p>It’s important to notice that I am exposing <code>db</code> object which contains every model/table schema definition and I just have to import the <code>db</code> object to apply operations on specific database tables using it.</p>
 <p>This setup can be auto-generated with the help of <a href="https://github.com/sequelize/cli" target="_blank" rel="external">Sequelize CLI</a> tool that helps in bootstrapping a new project in an effective manner (like the above) and handle database migrations directly from the terminal.</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Sequelize is feature rich ORM for Node.js. It has a documentation that at times may not provide direct solutions to your problems but there always Github issues for that. What I like about is its Promise based control flow. Coming from NoSQL background (and using MongoDB), understanding Sequelize really took less time. Most of the query based models are quite similar to that in MongoDB (especially the CRUD operations). I am looking for a brighter, more improved documentation and ease of support from Sequelize.</p>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -301,7 +306,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/</id>
     <published>2017-05-05T04:30:41.000Z</published>
-    <updated>2017-05-21T17:54:34.000Z</updated>
+    <updated>2017-06-08T11:25:55.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/xNQU22c.jpg" alt=""></p>
 <p>Ever since I got interested in Node.js and started learning to program in JavaScript, both the programming language and the server side platform have been most relevant to me. Due them, I have made my first PR to an open source project on Github, heck, I even built one of my own using them (<em>see <a href="https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot" target="_blank" rel="external">#100DaysOfCode</a></em>) which currently has more than 6 people actively contributing and enhancing it.</p>
@@ -311,6 +316,8 @@
 <p>MEAN is an acronym for MongoDB, ExpressJS, AngularJS, and Node.js. So instead of learning four different programming languages, you just need to know JavaScript.</p>
 <h2 id="Setup-MEAN-Stack-in-Webstorm"><a href="#Setup-MEAN-Stack-in-Webstorm" class="headerlink" title="Setup MEAN Stack in Webstorm"></a>Setup MEAN Stack in Webstorm</h2><p>I am sharing a video here which shows on how to get started with MEAN using JetBrain’s Webstorm (<em>A JavaScript IDE</em>) by John Lindquist.</p>
 <p><a href="https://www.youtube.com/watch?v=JnMvok0Yks8" target="_blank" rel="external"><img src="https://img.youtube.com/vi/JnMvok0Yks8/0.jpg" alt="Setup MEAN Stack in Webstorm"></a></p>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -323,11 +330,11 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
       <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
   </entry>
   
@@ -336,7 +343,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/</id>
     <published>2017-04-28T09:36:48.000Z</published>
-    <updated>2017-05-21T17:32:57.000Z</updated>
+    <updated>2017-06-08T11:25:32.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/7SvpTRp.png" alt=""></p>
 <p>ESLint is an open source JavaScript linting utility that help you overcome developer errors as JavaScript is loosely-typed language. There are quite a few options such as JSHint and JSCS in Javascript community for code linting and this post doesn’t suggest that you cannot use them.</p>
@@ -381,6 +388,8 @@
 <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"plugins": [ "name-of-plugin"]</div></pre></td></tr></table></figure>
 <p>Some plugins for popular libraries: <a href="https://www.npmjs.com/package/eslint-plugin-angular" target="_blank" rel="external">Angular</a> | <a href="https://www.npmjs.com/package/eslint-plugin-react" target="_blank" rel="external">React</a></p>
 <p>Another plugin, I find very useful is <a href="https://www.npmjs.com/package/eslint-plugin-one-variable-per-var" target="_blank" rel="external">one variable per var</a> just to maintain code consistency over a large/open-source project.</p>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -393,11 +402,11 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
+    
       <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
-    
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
@@ -406,7 +415,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/</id>
     <published>2017-04-19T05:54:37.000Z</published>
-    <updated>2017-05-21T17:34:22.000Z</updated>
+    <updated>2017-06-08T11:25:48.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
 <p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
@@ -431,6 +440,8 @@
 <h3 id="Set-of-Bindings"><a href="#Set-of-Bindings" class="headerlink" title="Set of Bindings"></a>Set of Bindings</h3><p>These set of bindings are responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.</p>
 <h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><p>It’s a <a href="https://developers.google.com/v8/" target="_blank" rel="external">runtime engine developed by Google for Chrome</a> browser for JavaScript. It is the reason Node.js is fast and efficient.</p>
 <h3 id="Core-Library"><a href="#Core-Library" class="headerlink" title="Core Library"></a>Core Library</h3><p>This is a JavaScript library that implements high-level Node.js API <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">(a.k.a. node-core)</a>.</p>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -450,7 +461,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/</id>
     <published>2017-04-14T06:50:12.000Z</published>
-    <updated>2017-05-21T17:34:42.000Z</updated>
+    <updated>2017-06-08T11:26:02.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
 <p>Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.</p>
@@ -466,7 +477,10 @@
 <p>There’s alternative procedure in which IIFE can be avoided, and is simple. Call the Angular Module with a single argument. When an angular module is called with a single argument, it retrieves the already created module and returns it.</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">angular.module(<span class="string">'firstModule'</span>).controller(...);</div><div class="line">angular.module(<span class="string">'firstModule'</span>).directive(...);</div></pre></td></tr></table></figure>
 <p>Alternatively, to avoid boilerplate, components such as controllers and directives can be chained with the module declaration.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, [])     <span class="comment">// notice no semicolon</span></div><div class="line">.controller(...)</div><div class="line">.directive(...);                <span class="comment">// notice the semicolon</span></div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, [])     <span class="comment">// notice no semicolon</span></div><div class="line">.controller(...)</div><div class="line">.directive(...);                <span class="comment">// notice the semicolon</span></div></pre></td></tr></table></figure>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
+]]></content>
     
     <summary type="html">
     
