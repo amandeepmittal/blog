@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-06T12:49:48.000Z</updated>
+  <updated>2017-06-08T12:03:59.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/06/06/Remove-node-modules-recursively/"/>
     <id>http://amandeepmittal.github.io/blog/2017/06/06/Remove-node-modules-recursively/</id>
     <published>2017-06-06T12:49:48.000Z</published>
-    <updated>2017-06-06T12:49:48.000Z</updated>
+    <updated>2017-06-08T12:03:59.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/2UOMNka.png" alt=""></p>
 <p><code>node_modules</code> tend to take a lot of space in your local system especially if you work with Node.js or related frameworks (such as client side frameworks: React or Angular). They are the part and parcel of modern day JavaScript applications and workflow.</p>
@@ -36,7 +36,10 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install</div></pre></td></tr></table></figure>
 <p>I have used this command earlier today it saved me up to 9 GB of space from local system over several projects.</p>
 <p>I even replaced <code>node_modules</code> with <code>bower_components</code> to do the same thing:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;bower_components&quot; -exec rm -rf &apos;&#123;&#125;&apos; +</div></pre></td></tr></table></figure>]]></content>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">find . -name &quot;bower_components&quot; -exec rm -rf &apos;&#123;&#125;&apos; +</div></pre></td></tr></table></figure>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
+]]></content>
     
     <summary type="html">
     
@@ -133,9 +136,9 @@
     </summary>
     
     
-      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
     
       <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
     
