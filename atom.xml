@@ -49,11 +49,11 @@
     </summary>
     
     
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
       <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
-    
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
   </entry>
   
@@ -94,9 +94,9 @@
     </summary>
     
     
-      <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
-    
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
+      <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
     
   </entry>
   
@@ -136,9 +136,9 @@
     </summary>
     
     
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
       <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
       <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
     
@@ -331,13 +331,13 @@
     </summary>
     
     
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
+      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
-      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
@@ -403,9 +403,9 @@
     </summary>
     
     
-      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
