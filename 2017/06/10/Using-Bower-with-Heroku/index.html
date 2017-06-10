@@ -3,17 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Archive: 2017 | Aman Mittal&#39;s Blog</title>
+    <title>Using Bower with Heroku | Aman Mittal&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I just find Node.js adroable...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Aman Mittal's Blog">
-<meta property="og:url" content="http://amandeepmittal.github.io/blog/archives/2017/page/2/index.html">
+    <meta name="description" content="Yes, I use Bower to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for fro">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Using Bower with Heroku">
+<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/06/10/Using-Bower-with-Heroku/index.html">
 <meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="I just find Node.js adroable...">
+<meta property="og:description" content="Yes, I use Bower to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for fro">
+<meta property="og:image" content="https://cdn-images-1.medium.com/max/720/1*zS_KNyajgV3amVbtWhsZaA.jpeg">
+<meta property="og:updated_time" content="2017-06-10T17:37:35.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aman Mittal's Blog">
-<meta name="twitter:description" content="I just find Node.js adroable...">
+<meta name="twitter:title" content="Using Bower with Heroku">
+<meta name="twitter:description" content="Yes, I use Bower to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for fro">
+<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/720/1*zS_KNyajgV3amVbtWhsZaA.jpeg">
     
 
     
@@ -205,111 +208,156 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2017</h1>
-            </div>
+            <section id="main"><article id="post-Using-Bower-with-Heroku" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/14/Modules-in-Angularjs/">Modules in Angularjs</a>
+        <h1 class="article-title" itemprop="name">
+            Using Bower with Heroku
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/14/Modules-in-Angularjs/">
-            <time datetime="2017-04-14T06:50:12.000Z" itemprop="datePublished">2017-04-14</time>
+        <a href="/blog/2017/06/10/Using-Bower-with-Heroku/">
+            <time datetime="2017-06-10T17:37:35.000Z" itemprop="datePublished">2017-06-10</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/angularjs/">angularjs</a>
+        <a class="tag-link" href="/blog/tags/bower/">bower</a>, <a class="tag-link" href="/blog/tags/heroku/">heroku</a>
     </div>
 
-                </div>
-            </div>
-        </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+                    </div>
                 
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">The Node Way: Philosophy of a Platform</a>
-        </h1>
-    
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p><img src="https://cdn-images-1.medium.com/max/720/1*zS_KNyajgV3amVbtWhsZaA.jpeg" alt=""><br>Yes, I use <a href="http://bower.io/" target="_blank" rel="external">Bower</a> to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for front-end development. Plus, I feel that maintaining front-end dependencies with Bower helps in keeping my application’s skeleton clean.</p>
+<a id="more"></a>
+<p>So for last two of my projects, I have been using <a href="http://heroku.com/" target="_blank" rel="external">Heroku</a> for deployment. Since I am maintaining front-end dependencies using Bower, I went through <a href="https://devcenter.heroku.com/articles/buildpacks" target="_blank" rel="external">this article</a> which is about generating buildpacks on Heroku. I find generating buildpacks adds unnecessary complexity in the process of application deployment, at least for rapid prototyping. Thus, I choose a different path. Adding Bower as an npm dependency seems an easy process and doesn’t add any kind of complexity. I find it’s great only if you are using Bower for rapid prototyping JavaScript applications.</p>
+<p>After you are done with building your application, all you have to do is add Bower as an npm dependency in package.json file and then add a script under npm scripts to execute a command that will install bower dependencies before the application is deployed on Heroku.</p>
+<p>Bower as dependency in package.json :</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">"dependencies": &#123;</div><div class="line">  "bower": "1.8.0" </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>And then add a <code>postinstall</code> command in npm <code>scripts</code>: </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "postinstall": "./node_modules/bower/bin/bower install" </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>You can read more about <a href="https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process" target="_blank" rel="external">customizing Heroku Build Process here</a>.</p>
+<hr>
+<p> <em>See you on <a href="https://twitter.com/amanhimself" target="_blank" rel="external">Twitter</a></em></p>
+<p> <em>Originally Publisheda at Medium.com on Dec, 29, 2016.</em></p>
+<hr>
+<p> <strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">
-            <time datetime="2017-04-05T13:01:29.000Z" itemprop="datePublished">2017-04-05</time>
-        </a>
-    </div>
-
-
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
-    </div>
-
-                </div>
-            </div>
+        
         </div>
-    
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
-                
-    
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/blog/2017/04/03/JavaScript-Code-Conventions/">JavaScript Code Conventions</a>
-        </h1>
-    
-
-                <div class="article-meta">
-                    
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/04/03/JavaScript-Code-Conventions/">
-            <time datetime="2017-04-03T17:31:43.000Z" itemprop="datePublished">2017-04-03</time>
-        </a>
-    </div>
+        <footer class="article-footer">
+            <div class="share-container">
 
 
-                    
-                    
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/javascript/">javascript</a>
-    </div>
 
-                </div>
-            </div>
-        </div>
-    
+    <div class="a2a_kit a2a_default_style">
+    <a class="a2a_dd" href="https://www.addtoany.com/share">Share</a>
+    <span class="a2a_divider"></span>
+    <a class="a2a_button_facebook"></a>
+    <a class="a2a_button_twitter"></a>
+    <a class="a2a_button_google_plus"></a>
+    <a class="a2a_button_pinterest"></a>
+    <a class="a2a_button_tumblr"></a>
+</div>
+<script type="text/javascript" src="//static.addtoany.com/menu/page.js"></script>
+<style>
+    .a2a_menu {
+        border-radius: 4px;
+    }
+    .a2a_menu a {
+        margin: 2px 0;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 4px;
+        color: inherit !important;
+        font-family: 'Microsoft Yahei';
+    }
+    #a2apage_dropdown {
+        margin: 10px 0;
+    }
+    .a2a_mini_services {
+        padding: 10px;
+    }
+    a.a2a_i,
+    i.a2a_i {
+        width: 122px;
+        line-height: 16px;
+    }
+    a.a2a_i .a2a_svg,
+    a.a2a_more .a2a_svg {
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        vertical-align: top;
+        background-size: 16px;
+    }
+    a.a2a_i {
+        border: none !important;
+    }
+    a.a2a_menu_show_more_less {
+        margin: 0;
+        padding: 10px 0;
+        line-height: 16px;
+    }
+    .a2a_mini_services:after{content:".";display:block;height:0;clear:both;visibility:hidden}
+    .a2a_mini_services{*+height:1%;}
+</style>
+
 </div>
 
-    <nav id="page-nav">
-        <a class="extend prev" rel="prev" href="/blog/archives/2017/">&laquo; Prev</a><a class="page-number" href="/blog/archives/2017/">1</a><span class="page-number current">2</span>
-    </nav>
+            
+    
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/06/10/Using-Bower-with-Heroku/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/06/10/Using-Bower-with-Heroku/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/blog/2017/06/06/Remove-node-modules-recursively/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Older</strong>
+            <div class="article-nav-title">Remove node_modules recursively</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
 </section>
             
                 <aside id="sidebar">
@@ -486,11 +534,13 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-        this.page.identifier = 'undefined';
+            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/06/10/Using-Bower-with-Heroku/';
+        
+        this.page.identifier = 'Using-Bower-with-Heroku';
     };
     (function() { 
         var d = document, s = d.createElement('script');  
-        s.src = '//' + 'aman-blog' + '.disqus.com/count.js';
+        s.src = '//' + 'aman-blog' + '.disqus.com/embed.js';
         s.setAttribute('data-timestamp', +new Date());
         (d.head || d.body).appendChild(s);
     })();

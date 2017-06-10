@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-08T12:03:59.000Z</updated>
+  <updated>2017-06-10T17:37:35.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,42 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Using Bower with Heroku</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/10/Using-Bower-with-Heroku/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/10/Using-Bower-with-Heroku/</id>
+    <published>2017-06-10T17:37:35.000Z</published>
+    <updated>2017-06-10T17:37:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*zS_KNyajgV3amVbtWhsZaA.jpeg" alt=""><br>Yes, I use <a href="http://bower.io/" target="_blank" rel="external">Bower</a> to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for front-end development. Plus, I feel that maintaining front-end dependencies with Bower helps in keeping my application’s skeleton clean.</p>
+<a id="more"></a>
+<p>So for last two of my projects, I have been using <a href="http://heroku.com/" target="_blank" rel="external">Heroku</a> for deployment. Since I am maintaining front-end dependencies using Bower, I went through <a href="https://devcenter.heroku.com/articles/buildpacks" target="_blank" rel="external">this article</a> which is about generating buildpacks on Heroku. I find generating buildpacks adds unnecessary complexity in the process of application deployment, at least for rapid prototyping. Thus, I choose a different path. Adding Bower as an npm dependency seems an easy process and doesn’t add any kind of complexity. I find it’s great only if you are using Bower for rapid prototyping JavaScript applications.</p>
+<p>After you are done with building your application, all you have to do is add Bower as an npm dependency in package.json file and then add a script under npm scripts to execute a command that will install bower dependencies before the application is deployed on Heroku.</p>
+<p>Bower as dependency in package.json :</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">"dependencies": &#123;</div><div class="line">  "bower": "1.8.0" </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>And then add a <code>postinstall</code> command in npm <code>scripts</code>: </p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">"scripts": &#123;</div><div class="line">  "postinstall": "./node_modules/bower/bin/bower install" </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>You can read more about <a href="https://devcenter.heroku.com/articles/nodejs-support#customizing-the-build-process" target="_blank" rel="external">customizing Heroku Build Process here</a>.</p>
+<hr>
+<p> <em>See you on <a href="https://twitter.com/amanhimself" target="_blank" rel="external">Twitter</a></em></p>
+<p> <em>Originally Publisheda at Medium.com on Dec, 29, 2016.</em></p>
+<hr>
+<p> <strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/720/1*zS_KNyajgV3amVbtWhsZaA.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;Yes, I use &lt;a href=&quot;http://bower.io/&quot;&gt;Bower&lt;/a&gt; to maintain front-end dependencies (exlusively with AngularJS), mostly for my side projects. Whatever you say, Bower is good and I am too anxious to mess with npm dependencies for front-end development. Plus, I feel that maintaining front-end dependencies with Bower helps in keeping my application’s skeleton clean.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="bower" scheme="http://amandeepmittal.github.io/blog/tags/bower/"/>
+    
+      <category term="heroku" scheme="http://amandeepmittal.github.io/blog/tags/heroku/"/>
+    
+  </entry>
   
   <entry>
     <title>Remove node_modules recursively</title>
@@ -456,44 +492,6 @@
     
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Modules in Angularjs</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/04/14/Modules-in-Angularjs/</id>
-    <published>2017-04-14T06:50:12.000Z</published>
-    <updated>2017-06-08T11:26:02.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
-<p>Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.</p>
-<a id="more"></a>
-<h2 id="Creating-a-simple-Module"><a href="#Creating-a-simple-Module" class="headerlink" title="Creating a simple Module"></a>Creating a simple Module</h2><p><code>angular.module</code> function is used to create a module whenever necessary. The first argument is always the module name and the second argument is an array that specifies additional modules upon which are current module depends.</p>
-<p>If there’s no dependency, pass an empty array</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// module with no dependency</span></div><div class="line">angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line"><span class="comment">// module with dependencies</span></div><div class="line">angular.module(<span class="string">'moduleB'</span>, [<span class="string">'moduleA'</span>, <span class="string">'moduleC'</span>]);</div></pre></td></tr></table></figure>
-<p>After creating a module, different components are bind with it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> myModule = angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">myModule.controller(...);</div><div class="line"></div><div class="line">myModule.service(...);</div></pre></td></tr></table></figure>
-<p>The above code creates a new module and attaches two components with it: a controller, and a directive. It also declares a global variable <code>myModule</code> in the JavaScript global namespace. Imagine a large app with vast amount of global variables like this. To avoid this situation of populating JavaScript global namespace, we can declare the whole code inside an IIFE.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> myModule = angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">  myModule.controller(...);</div><div class="line"></div><div class="line">  myModule.service(...);</div><div class="line">&#125;)();</div><div class="line"></div><div class="line"><span class="comment">// myModule is undefined here</span></div></pre></td></tr></table></figure>
-<p>This function will execute as soon as it’s declared.</p>
-<p>There’s alternative procedure in which IIFE can be avoided, and is simple. Call the Angular Module with a single argument. When an angular module is called with a single argument, it retrieves the already created module and returns it.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, []);</div><div class="line"></div><div class="line">angular.module(<span class="string">'firstModule'</span>).controller(...);</div><div class="line">angular.module(<span class="string">'firstModule'</span>).directive(...);</div></pre></td></tr></table></figure>
-<p>Alternatively, to avoid boilerplate, components such as controllers and directives can be chained with the module declaration.</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">angular.module(<span class="string">'moduleA'</span>, [])     <span class="comment">// notice no semicolon</span></div><div class="line">.controller(...)</div><div class="line">.directive(...);                <span class="comment">// notice the semicolon</span></div></pre></td></tr></table></figure>
-<hr>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/KdhytmU.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Modules are essential part of developing an AngularJS application. Modules provide resusability of code. A module in AngularJS act as a container that holds/groups different components.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="angularjs" scheme="http://amandeepmittal.github.io/blog/tags/angularjs/"/>
     
   </entry>
   
