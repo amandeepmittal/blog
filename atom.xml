@@ -141,7 +141,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/</id>
     <published>2017-05-30T09:37:43.000Z</published>
-    <updated>2017-06-08T11:25:41.000Z</updated>
+    <updated>2017-06-12T08:29:42.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
 <h2 id="Introduction-to-ORM"><a href="#Introduction-to-ORM" class="headerlink" title="Introduction to ORM"></a>Introduction to ORM</h2><p>ORM or Object Relation Mapping is a process of mapping between objects and relation database systems. An ORM acts like an interface between two system. ORM provide advantages for developers from basic ones like saving time and effort and rather focusing on business logic. The code is robust instead of redundant. ORM helps in managing queries for multiple tables in an effective manner. Lastly, an ORM (like <a href="http://docs.sequelizejs.com/en/v3/" target="_blank" rel="external">sequelize</a>) is capable to connect with different databases (which comes in handy when switching from one database to another).</p>
@@ -161,7 +161,7 @@
 <p>This setup can be auto-generated with the help of <a href="https://github.com/sequelize/cli" target="_blank" rel="external">Sequelize CLI</a> tool that helps in bootstrapping a new project in an effective manner (like the above) and handle database migrations directly from the terminal.</p>
 <h2 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h2><p>Sequelize is feature rich ORM for Node.js. It has a documentation that at times may not provide direct solutions to your problems but there always Github issues for that. What I like about is its Promise based control flow. Coming from NoSQL background (and using MongoDB), understanding Sequelize really took less time. Most of the query based models are quite similar to that in MongoDB (especially the CRUD operations). I am looking for a brighter, more improved documentation and ease of support from Sequelize.</p>
 <hr>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
+<p>Originally Published on <a href="https://hackernoon.com/getting-started-with-sequelize-for-nodejs-applications-2854c58ffb8c" target="_blank" rel="external">Hackernoon.com</a><br><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
 ]]></content>
     
     <summary type="html">
@@ -172,9 +172,9 @@
     </summary>
     
     
-      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
     
       <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
     
@@ -266,7 +266,7 @@
     <link href="http://amandeepmittal.github.io/blog/2017/05/21/Concepts-in-Angularjs/"/>
     <id>http://amandeepmittal.github.io/blog/2017/05/21/Concepts-in-Angularjs/</id>
     <published>2017-05-21T18:16:18.000Z</published>
-    <updated>2017-05-21T18:18:07.000Z</updated>
+    <updated>2017-06-12T08:41:44.000Z</updated>
     
     <content type="html"><![CDATA[<p><img src="http://i.imgur.com/KdhytmU.png" alt=""></p>
 <p>AngularJS is a client side web application JavaScript framework, developed by Google that enhances HTML syntax. There are many options available when it comes picking up a client side framework as JavaScript has evolved fast in past two years.</p>
@@ -285,7 +285,7 @@
 <h3 id="Dependency-Injection"><a href="#Dependency-Injection" class="headerlink" title="Dependency Injection"></a>Dependency Injection</h3><p>It is a software design pattern that deals with how components get hold of their dependencies.</p>
 <p>Components such as services, directives, filters, and animations are defined by an injectable factory method or constructor function. These components can be injected with “service” and “value” components as dependencies.</p>
 <h3 id="SPA"><a href="#SPA" class="headerlink" title="SPA"></a>SPA</h3><p>SPA stands for Single Page Application in which either all necessary HTML, CSS and JavaScript code is retrieved with a single page load or the appropriate resources are loaded dynamically usually in response to a user request.</p>
-<p>To fulfill a user request, Angular responses are managed via AJAX using HTTP verbs: GET, POST, PUT, DELETE, in most cases a RESTful API consisting endpoints at backend.</p>
+<p>To fulfill a user request, Angular responses are managed via AJAX using HTTP verbs: <code>GET</code>, <code>POST</code>, <code>PUT</code>, <code>DELETE</code>, in most cases a RESTful API consisting endpoints at backend.</p>
 ]]></content>
     
     <summary type="html">
