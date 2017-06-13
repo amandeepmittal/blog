@@ -87,9 +87,9 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
       <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
+    
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
   </entry>
   
@@ -130,9 +130,9 @@
     </summary>
     
     
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
       <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
+    
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
   </entry>
   
@@ -371,9 +371,9 @@
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
-      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
-    
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
+    
+      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
   </entry>
   
@@ -439,9 +439,9 @@
     </summary>
     
     
-      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
