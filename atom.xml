@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-10T17:37:35.000Z</updated>
+  <updated>2017-06-14T19:01:35.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,40 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to make a Twitter Bot with NodeJS</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/</id>
+    <published>2017-06-14T19:01:35.000Z</published>
+    <updated>2017-06-14T19:01:35.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/800/1*N32NxcCDKDDjlc56ghcsaA.jpeg" alt=""><br>Earlier this week, <a href="https://community.risingstack.com/" target="_blank" rel="external">Rising Stack Community</a> published the second of tutorial on Building a Twitter Bot with NodeJS. Some of you may have read the first part here <a href="https://hackernoon.com/create-a-simple-twitter-bot-with-node-js-5b14eb006c08#.43u5qmvts" target="_blank" rel="external">on Medium (published by Hackernoon)</a> while others might have gone through the first part of the guide on <a href="https://community.risingstack.com/node-js-twitter-bot-tutorial/" target="_blank" rel="external">RisingStack Community</a>.</p>
+<h2 id="Part-I-Setup-amp-Getting-Ready"><a href="#Part-I-Setup-amp-Getting-Ready" class="headerlink" title="Part I: Setup &amp; Getting Ready"></a>Part I: Setup &amp; Getting Ready</h2><p>The idea of creating a Twitter Bot started in the back of my head as I was learning Nodejs a few months back and wanted to stay updated with happenings in the community. Nodejs community has grown enormously in past year and to keep up with that you need tools or browser tabs to do so.</p>
+<p>I built a simple Twitter Bot in Nodejs (which still works, <a href="http://twitter.com/nodejstweet" target="_blank" rel="external">link here</a>)that fetches me tweets using general purpose #hashtags related to technologies such as #Nodejs #AngularJS #Mongodb &amp;c.</p>
+<p>In Part 1, I discuss of starting out building a simple Twitter Bot that retweets and favorite tweets based on the query used with setting up this Twitter application and getting access. To persistent communication with Twitter API, I use npm module called <a href="https://www.npmjs.com/package/twit" target="_blank" rel="external">twit</a> which has a very good documentation to refer to and offer various methods to communicate to <a href="https://dev.twitter.com/docs" target="_blank" rel="external">Twitter API</a>.</p>
+<p><img src="https://cdn-images-1.medium.com/max/800/1*l4nVQSFz3E3CmjD-g965pw.png" alt=""></p>
+<h2 id="Part-2-Advance-Usage"><a href="#Part-2-Advance-Usage" class="headerlink" title="Part 2: Advance Usage"></a>Part 2: Advance Usage</h2><p>The second part of the guide extends the usability of the Twitter bot by making our Bot interact with user (at a very high level) or in <strong>Twitter terms, to tweet back to any user who follows the bot</strong>. This is done by using <a href="https://dev.twitter.com/streaming/overview" target="_blank" rel="external">Twitter’s Streaming API</a>.</p>
+<p><strong>Here is the link to <a href="https://community.risingstack.com/how-to-make-a-twitter-bot-with-node-js/" target="_blank" rel="external">Second Part of Building a Twitter Bot with NodeJS</a></strong>.</p>
+<p>I received positive feedback by the people who followed the <a href="https://hackernoon.com/create-a-simple-twitter-bot-with-node-js-5b14eb006c08#.5qwkbly78" target="_blank" rel="external">first part of the guide</a> and that encouraged me to write a <a href="https://community.risingstack.com/how-to-make-a-twitter-bot-with-node-js/" target="_blank" rel="external">second part</a>. I hope you’ll have fun with it, since programming in NodeJS as a platform is really fun from a developer’s point of view, and a very pragmatic approach, I would say.</p>
+<p>I am looking forward to grab a glimpse of YOUR Twitter Bot. If you are working on it or have already published it on Twitter, don’t forget to send me a link with Twitter handler of your bot in the comments below or you can add your Twitter Bot to this Nodejs Twitter Bot resource Github repo <a href="https://github.com/amandeepmittal/awesome-twitter-bots" target="_blank" rel="external">here</a>.</p>
+<hr>
+<p>Originally published on <a href="https://chatbotslife.com/how-to-make-a-twitter-bot-with-nodejs-d5cb04fdbf97" target="_blank" rel="external">ChatBotsLife.com</a></p>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> this Blog for more on JavaScript/Nodejs.</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*N32NxcCDKDDjlc56ghcsaA.jpeg&quot; alt=&quot;&quot;&gt;&lt;br&gt;Earlier this week, &lt;a href=&quot;https://community
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="bots" scheme="http://amandeepmittal.github.io/blog/tags/bots/"/>
+    
+  </entry>
   
   <entry>
     <title>Using Bower with Heroku</title>
@@ -446,52 +480,6 @@
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How Node.js Works?</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/04/19/How-Node-js-Works/</id>
-    <published>2017-04-19T05:54:37.000Z</published>
-    <updated>2017-06-08T11:25:48.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png" alt=""></p>
-<p>When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about <strong>Node.js System</strong> — a glimpse of internal workings of Node.</p>
-<a id="more"></a>
-<p>If you are familiar with Node.js, it is a known fact that Node.js is single threaded. If you are from programming/computer science background you know what a thread means. Consider this scenario: traditionally — an I/O request comes to a web server and is assigned to an available thread, and for each concurrent connection there is one thread available. That request is handled on the specific thread until it is fulfilled and the response is sent.</p>
-<p>This scenario is a perfect example of <strong>Blocking</strong> I/O because while handling a particular request by a specific thread, there will be some idle time when the operations are being done (such as retrieving a file, opening it, reading it, etc.). A single thread consumes memory. A longer running thread for each connection and then sitting idly for some amount of time is not considered an efficient way in the world of <a href="https://amandeepmittal.github.io/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">Node.js</a>.</p>
-<h2 id="Enter-Reactor-Pattern-Heart-of-Node-js"><a href="#Enter-Reactor-Pattern-Heart-of-Node-js" class="headerlink" title="Enter Reactor Pattern- Heart of Node.js"></a>Enter Reactor Pattern- Heart of Node.js</h2><p><strong>Reactor Pattern</strong> is an idea of non-blocking I/O operations in Node.js. This pattern provides a handler(in case of Node.js, a callback function) that is associated with each I/O operation. When an I/O request is generated, it is submitted to a demultiplexer.</p>
-<p>This demultiplexer is a notification interface that is used to handle concurrency in <em>non-blocking I/O</em> mode and collects every request in form of an event and queues each event in a queue. Thus, the demultiplexer provides the <strong>Event Queue</strong>, which we often hear. When a request is collected by the demultiplexer, it returns the control back to the system and does not blocks the I/O. At the same time, there is an <strong>Event Loop</strong> which iterates over the items in the Event Queue. Every event has a callback function associated with it, and that callback function is invoked when the Event Loop iterates.</p>
-<p>The callback function further mostly have other callbacks associated within representing some asynchronous operations. These operations are inserted in the Event Queue by the demultiplexer and are ready to be processed once the Event Loop iterates over them. That is why calls to other operations must be asynchronous.</p>
-<p>When all the items in the Event Queue are processed and there are no pending operations left, Node.js terminates the application automatically.</p>
-<h2 id="Building-Blocks-of-Node-js"><a href="#Building-Blocks-of-Node-js" class="headerlink" title="Building Blocks of Node.js"></a>Building Blocks of Node.js</h2><ul>
-<li>Reactor Pattern</li>
-<li>libuv</li>
-<li>A set of Bindings</li>
-<li>Chrome’s V8</li>
-<li>Core JS Library</li>
-</ul>
-<h3 id="libuv"><a href="#libuv" class="headerlink" title="libuv"></a>libuv</h3><p>Pronounced as “lib u v”, is library written in C language to make Node.js compatible with every OS and provide the non-blocking I/O behaviour. <a href="http://docs.libuv.org/en/v1.x/" target="_blank" rel="external">libuv</a> is a low-level engine that implements reactor pattern thus providing an API for creating the Event Loop, managing an Event Queue and running asynchronous I/O operations. It is built specifically to provide a unified experience over different Operating Systems.</p>
-<h3 id="Need-for-libuv"><a href="#Need-for-libuv" class="headerlink" title="Need for libuv?"></a>Need for libuv?</h3><p>Each operating system has its own interface for the demultiplexer. Such as <a href="https://en.wikipedia.org/wiki/Kqueue" target="_blank" rel="external">Kqueue</a> for Mac OS X, <a href="https://en.wikipedia.org/wiki/Input/output_completion_port" target="_blank" rel="external">IOCP</a> for Windows and <a href="https://en.wikipedia.org/wiki/Epoll" target="_blank" rel="external">Epoll</a> for Linux. Different multiplexers will behave differently when handling an I/O request. And then, each I/O operation can differ in its behaviour within the same operating system. This creates an inconsistency and to overcome this inconsistency <em>libuv</em> is the solution.</p>
-<p><em>I am not going to talk about internal workings of libuv here, not an expert on that, myself. For more info on libuv check their <a href="http://docs.libuv.org/" target="_blank" rel="external">docs</a> or this <a href="http://www.slideshare.net/saghul/libuv-nodejs-and-everything-in-between" target="_blank" rel="external">slide</a> by Saúl Ibarra Corretgé <a href="https://twitter.com/saghul" target="_blank" rel="external">(@saghul)</a> is a good start.</em></p>
-<p><a href="https://github.com/libuv/libuv" target="_blank" rel="external">Also, libuv is independently maintained by awesome developers.</a></p>
-<h3 id="Set-of-Bindings"><a href="#Set-of-Bindings" class="headerlink" title="Set of Bindings"></a>Set of Bindings</h3><p>These set of bindings are responsible for wrapping and exposing libuv and other low-level functionality to JavaScript.</p>
-<h3 id="V8"><a href="#V8" class="headerlink" title="V8"></a>V8</h3><p>It’s a <a href="https://developers.google.com/v8/" target="_blank" rel="external">runtime engine developed by Google for Chrome</a> browser for JavaScript. It is the reason Node.js is fast and efficient.</p>
-<h3 id="Core-Library"><a href="#Core-Library" class="headerlink" title="Core Library"></a>Core Library</h3><p>This is a JavaScript library that implements high-level Node.js API <a href="https://nodejs.org/dist/latest-v6.x/docs/api/" target="_blank" rel="external">(a.k.a. node-core)</a>.</p>
-<hr>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/720/1*dTYKv5fII4doUAqJSA51Qg.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;When I started learning Node.js I always wondered, how does it work? How is it inside Node.js? Event loop and Event Queue jargons are digested. But what exactly is going on? Where do those jargons Event Loop and Event Queue come from.To satisfy my curiosity as well to know the answer to my previous question, I went in depth as much as I can and came across some things which I’d like to share with you. In brief, this article is about &lt;strong&gt;Node.js System&lt;/strong&gt; — a glimpse of internal workings of Node.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
   </entry>
   
