@@ -475,11 +475,11 @@
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
-    
       <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
     
       <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
+    
+      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
