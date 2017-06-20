@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-14T19:07:41.000Z</updated>
+  <updated>2017-06-20T04:33:04.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,45 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to paginate records in MySQL using Sequelize and Nodejs</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/</id>
+    <published>2017-06-20T04:33:04.000Z</published>
+    <updated>2017-06-20T04:33:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
+<p>Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requirement of paginating results from backend (REST API) to the frontend. I struggled for two reasons. Firstly, coming from NoSQL background it’s hard to grasp SQL DBs. Second reason being is Sequelize documentation does not provide a clear and direct solution to this very basic abstraction. Lot of people assume things in the world of SQL databases.</p>
+<a id="more"></a>
+<p>Thus, in this post we will be talking about a basic paginating module using Sequelize, MySQL and Node.js.</p>
+<p>I am using you have some tables and records inside your MySQL database.</p>
+<p>To setup a new app and making database connection, read my post on [Getting started with Sequelize].</p>
+<h2 id="Defining-a-Model"><a href="#Defining-a-Model" class="headerlink" title="Defining a Model"></a>Defining a Model</h2><p>I am directly jumping on <code>user</code> model definition:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">sequelize, DataTypes</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> user = sequelize.define(<span class="string">'user'</span>, &#123;</div><div class="line">	<span class="attr">id</span>:&#123;</div><div class="line">		<span class="attr">allowNull</span>: <span class="literal">false</span>,</div><div class="line">		<span class="attr">autoIncrement</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">primaryKey</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">type</span>: DataTypes.INTEGER</div><div class="line">	&#125;,</div><div class="line">    <span class="attr">username</span>: DataTypes.INTEGER,</div><div class="line">    <span class="attr">first_name</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">last_name</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">date_of_birth</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">created</span>: DataTypes.INTEGER,</div><div class="line">    <span class="attr">updated</span>: DataTypes.INTEGER,</div><div class="line">  &#125;, &#123;</div><div class="line">		<span class="attr">timestamps</span>: <span class="literal">false</span>,</div><div class="line">		<span class="attr">freezeTableName</span>: <span class="literal">true</span>,</div><div class="line">	  	<span class="attr">underscore</span>: <span class="literal">true</span></div><div class="line">	&#125;);</div><div class="line">  <span class="keyword">return</span> user;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>I am using that we a table that contains hundred of user records that we want to display on an web application, say in the admin panel, and we want to show just 50 records at once.</p>
+<p>In the <code>api/user.js</code> I am defining an endpoint <code>/:page</code> that will fetch number of results we need from the database.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/:page'</span>, (req, res) =&gt; &#123;</div><div class="line">  <span class="keyword">let</span> limit = <span class="number">50</span>;   <span class="comment">// number of records per page</span></div><div class="line">  <span class="keyword">let</span> offset = <span class="number">0</span>;</div><div class="line"></div><div class="line">  db.user.findAndCountAll()</div><div class="line">  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> page = req.paras.page;      <span class="comment">// page number</span></div><div class="line">    <span class="keyword">let</span> pages = <span class="built_in">Math</span>.ceil(data.count / limit);</div><div class="line">		offset = limit * (page - <span class="number">1</span>);</div><div class="line"></div><div class="line">    db.user.findAll(&#123;</div><div class="line">      <span class="attr">attributes</span>: [<span class="string">'id'</span>, <span class="string">'first_name'</span>, <span class="string">'last_name'</span>, <span class="string">'date_of_birth'</span>],</div><div class="line">      <span class="attr">limit</span>: limit,</div><div class="line">      <span class="attr">offset</span>: offset,</div><div class="line">      <span class="attr">$sort</span>: &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;</div><div class="line">    &#125;)</div><div class="line">    .then(<span class="function">(<span class="params">users</span>) =&gt;</span> &#123;</div><div class="line">      res.status(<span class="number">200</span>).json(&#123;<span class="string">'result'</span>: users, <span class="string">'count'</span>: data.count, <span class="string">'pages'</span>: pages&#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">		res.status(<span class="number">500</span>).send(<span class="string">'Internal Server Error'</span>);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>findAndCountAll</code> is the model for searching multiple records in the database and it returns both the data required and the count of elements in that table. The above query will get 50 user records at once until the next page is called to fetch the next 50 records. <code>limit</code> and <code>offset</code> are required in queries related to pagination in which <code>limit</code> fetches the number of rows based on the query whereas <code>offset</code> is used to skip the number of rows in the database table.</p>
+<hr>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a></strong> this Blog for more on JavaScript/Nodejs/Ionic.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/jIaEOEh.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requirement of paginating results from backend (REST API) to the frontend. I struggled for two reasons. Firstly, coming from NoSQL background it’s hard to grasp SQL DBs. Second reason being is Sequelize documentation does not provide a clear and direct solution to this very basic abstraction. Lot of people assume things in the world of SQL databases.&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="mysql" scheme="http://amandeepmittal.github.io/blog/tags/mysql/"/>
+    
+      <category term="sequelize" scheme="http://amandeepmittal.github.io/blog/tags/sequelize/"/>
+    
+  </entry>
   
   <entry>
     <title>How to make a Twitter Bot with NodeJS</title>
@@ -406,78 +445,6 @@
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>How to start using ESLint in Node.js Applications?</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/04/28/Eslint-with-Nodejs/</id>
-    <published>2017-04-28T09:36:48.000Z</published>
-    <updated>2017-06-08T11:25:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/7SvpTRp.png" alt=""></p>
-<p>ESLint is an open source JavaScript linting utility that help you overcome developer errors as JavaScript is loosely-typed language. There are quite a few options such as JSHint and JSCS in Javascript community for code linting and this post doesn’t suggest that you cannot use them.</p>
-<a id="more"></a>
-<p>ESLint is designed to have all rules completely pluggable. That’s one of the primary reasons it came into existence. It allows developers to create their own linting rules. Every rule provided in the <a href="http://eslint.org/docs/user-guide" target="_blank" rel="external">ESLint official guide</a> is standalone rule and a developer at any point can decide whether to use a specific rule or not.</p>
-<h2 id="Installing"><a href="#Installing" class="headerlink" title="Installing"></a>Installing</h2><p><em>Note</em>: You must have Node.js installed in order to access ESLint via it’s package manager <code>npm</code>.</p>
-<p>For local installation to a project directory:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint --save-dev</div></pre></td></tr></table></figure>
-<p>For a global installation in your working system:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install eslint -g</div></pre></td></tr></table></figure>
-<p>ESLint will now be available via <code>eslint</code> command in your terminal.</p>
-<h2 id="Configuration"><a href="#Configuration" class="headerlink" title="Configuration"></a>Configuration</h2><p>Easiest way to configure it to setup a <code>.eslintrc</code> JSON file where are all the linting rules can be described.</p>
-<p>An example of <code>.eslintrc</code>:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="attr">"env"</span>: &#123;</div><div class="line">    <span class="attr">"node"</span>: <span class="number">1</span>,</div><div class="line">    <span class="attr">"browser"</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"globals"</span>: &#123;</div><div class="line">    <span class="attr">"exampleGlobalVariable"</span>: <span class="literal">true</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"rules"</span>: &#123;</div><div class="line">    <span class="attr">"eqeqeq"</span>: <span class="number">1</span></div><div class="line">  &#125;,</div><div class="line">  <span class="attr">"plugins"</span>: [</div><div class="line">  ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>If you installed eslint globally, you can also generate config file using</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">eslint --init</div></pre></td></tr></table></figure>
-<p>Other case, if you have installed it locally to a project, you will need to type in your terminal:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./node_modules/.bin/eslint --init</div></pre></td></tr></table></figure>
-<p>In both cases, you will be prompted with set of basic questions to generate <code>.eslintrc</code> file.</p>
-<p><img src="http://i.imgur.com/YxaCZnv.png" alt=""></p>
-<p>An example of file generated after above prompt:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">"env"</span>: &#123;</div><div class="line">        <span class="attr">"browser"</span>: <span class="literal">true</span>,</div><div class="line">        <span class="attr">"commonjs"</span>: <span class="literal">true</span></div><div class="line">    &#125;,</div><div class="line">    <span class="attr">"extends"</span>: <span class="string">"eslint:recommended"</span>,</div><div class="line">    <span class="attr">"rules"</span>: &#123;</div><div class="line">        <span class="attr">"indent"</span>: [</div><div class="line">            <span class="string">"error"</span>,</div><div class="line">            <span class="string">"tab"</span></div><div class="line">        ],</div><div class="line">        <span class="attr">"linebreak-style"</span>: [</div><div class="line">            <span class="string">"error"</span>,</div><div class="line">            <span class="string">"unix"</span></div><div class="line">        ],</div><div class="line">        <span class="attr">"quotes"</span>: [</div><div class="line">            <span class="string">"error"</span>,</div><div class="line">            <span class="string">"single"</span></div><div class="line">        ],</div><div class="line">        <span class="attr">"semi"</span>: [</div><div class="line">            <span class="string">"error"</span>,</div><div class="line">            <span class="string">"never"</span></div><div class="line">        ]</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>For detailed information on Configuration, <a href="http://eslint.org/docs/user-guide/configuring" target="_blank" rel="external">read here</a>.</p>
-<h2 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h2><p>Rules in ESLint are added individually. No rules are enforced by default. You have to specify rules explicitly, then only it will be enabled for the linting process.</p>
-<p>You can find a complete list of rules in the <a href="http://eslint.org/docs/rules/" target="_blank" rel="external">official documentation here</a></p>
-<p>After deciding which rules to include, you have to set there error levels. Each error level can be defined as following:</p>
-<ul>
-<li><code>0</code> - Turn the rule off</li>
-<li><code>1</code> - Turn the rule on as a warning</li>
-<li><code>2</code> - Turn the rule on as an error</li>
-</ul>
-<p>The difference between an error and a warning is the exit code that eslint will have when it finishes. If any errors are found, eslint will exit with a <code>1</code> exit code, otherwise it will exit with a <code>0</code>. If you are linting within a build step this allows you to control which rules should “break your build” and which ones should be considered as warnings.</p>
-<p>Learn how to <a href="http://eslint.org/docs/user-guide/configuring#configuring-rules" target="_blank" rel="external">configure rules in detail here</a>.</p>
-<h2 id="Environments"><a href="#Environments" class="headerlink" title="Environments"></a>Environments</h2><p>The code you are writing might be suitable for a particular environment such as, you might be writing a REST API in Node.js application using Express Framework (Sinatra) and the frontend of that application is going to be built in AngularJS. Two different projects, two different environments and both can have separate eslint configurations in one file even though the client and the server are under one project directory that is been considered as root of your project.</p>
-<p>How is it done? By setting the environment id to true in the <code>&quot;env&quot;</code> section of <code>.eslintrc</code>.</p>
-<h2 id="Linting"><a href="#Linting" class="headerlink" title="Linting"></a>Linting</h2><p>ESLint comes with a command line interface (CLI) to lint your files or directory.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">elsint file.js</div><div class="line">eslint dir/</div></pre></td></tr></table></figure>
-<p>The output generated will be grouped by file, and will specify the <code>line:column</code> number, warning/error, reason for the error, and the name of the rule for each failure.</p>
-<h2 id="Use-ESLint-with-your-preferred-Coding-Style"><a href="#Use-ESLint-with-your-preferred-Coding-Style" class="headerlink" title="Use ESLint with your preferred Coding Style"></a>Use ESLint with your preferred Coding Style</h2><p>ESLint personally does not promote any coding style. You can setup <code>.eslintrc</code> file to enforce coding style using <a href="http://eslint.org/docs/rules/#stylistic-issues" target="_blank" rel="external">style rules</a> that you like.</p>
-<p>You can also use ESLint with Style guides such as <a href="http://standardjs.com/" target="_blank" rel="external">JavaScript Standard Style</a>. You have to use extra plugin for that. The full guide can be found here (<a href="https://github.com/feross/eslint-config-standard" target="_blank" rel="external">https://github.com/feross/eslint-config-standard</a>).</p>
-<p>To add a plugin to <code>.eslintrc</code>:</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">"plugins": [ "name-of-plugin"]</div></pre></td></tr></table></figure>
-<p>Some plugins for popular libraries: <a href="https://www.npmjs.com/package/eslint-plugin-angular" target="_blank" rel="external">Angular</a> | <a href="https://www.npmjs.com/package/eslint-plugin-react" target="_blank" rel="external">React</a></p>
-<p>Another plugin, I find very useful is <a href="https://www.npmjs.com/package/eslint-plugin-one-variable-per-var" target="_blank" rel="external">one variable per var</a> just to maintain code consistency over a large/open-source project.</p>
-<hr>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/7SvpTRp.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;ESLint is an open source JavaScript linting utility that help you overcome developer errors as JavaScript is loosely-typed language. There are quite a few options such as JSHint and JSCS in Javascript community for code linting and this post doesn’t suggest that you cannot use them.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-      <category term="eslint" scheme="http://amandeepmittal.github.io/blog/tags/eslint/"/>
-    
-      <category term="linting" scheme="http://amandeepmittal.github.io/blog/tags/linting/"/>
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     

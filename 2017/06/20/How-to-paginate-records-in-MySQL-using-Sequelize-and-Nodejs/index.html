@@ -3,20 +3,20 @@
 <head>
     <meta charset="utf-8">
     
-    <title>How to make a Twitter Bot with NodeJS | Aman Mittal&#39;s Blog</title>
+    <title>How to paginate records in MySQL using Sequelize and Nodejs | Aman Mittal&#39;s Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="Earlier this week, Rising Stack Community published the second of tutorial on Building a Twitter Bot with NodeJS. Some of you may have read the first part here on Medium (published by Hackernoon) whil">
+    <meta name="description" content="Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requir">
 <meta property="og:type" content="article">
-<meta property="og:title" content="How to make a Twitter Bot with NodeJS">
-<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/index.html">
+<meta property="og:title" content="How to paginate records in MySQL using Sequelize and Nodejs">
+<meta property="og:url" content="http://amandeepmittal.github.io/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/index.html">
 <meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="Earlier this week, Rising Stack Community published the second of tutorial on Building a Twitter Bot with NodeJS. Some of you may have read the first part here on Medium (published by Hackernoon) whil">
-<meta property="og:image" content="https://cdn-images-1.medium.com/max/800/1*N32NxcCDKDDjlc56ghcsaA.jpeg">
-<meta property="og:updated_time" content="2017-06-14T19:07:41.000Z">
+<meta property="og:description" content="Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requir">
+<meta property="og:image" content="http://i.imgur.com/jIaEOEh.png">
+<meta property="og:updated_time" content="2017-06-20T04:33:04.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="How to make a Twitter Bot with NodeJS">
-<meta name="twitter:description" content="Earlier this week, Rising Stack Community published the second of tutorial on Building a Twitter Bot with NodeJS. Some of you may have read the first part here on Medium (published by Hackernoon) whil">
-<meta name="twitter:image" content="https://cdn-images-1.medium.com/max/800/1*N32NxcCDKDDjlc56ghcsaA.jpeg">
+<meta name="twitter:title" content="How to paginate records in MySQL using Sequelize and Nodejs">
+<meta name="twitter:description" content="Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requir">
+<meta name="twitter:image" content="http://i.imgur.com/jIaEOEh.png">
     
 
     
@@ -208,7 +208,7 @@ ga('send', 'pageview');
 </aside>
 
             
-            <section id="main"><article id="post-How-to-make-a-Twitter-Bot-with-NodeJS" class="article article-type-post" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -216,7 +216,7 @@ ga('send', 'pageview');
                 
     
         <h1 class="article-title" itemprop="name">
-            How to make a Twitter Bot with NodeJS
+            How to paginate records in MySQL using Sequelize and Nodejs
         </h1>
     
 
@@ -225,8 +225,8 @@ ga('send', 'pageview');
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/">
-            <time datetime="2017-06-14T19:01:35.000Z" itemprop="datePublished">2017-06-15</time>
+        <a href="/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/">
+            <time datetime="2017-06-20T04:33:04.000Z" itemprop="datePublished">2017-06-20</time>
         </a>
     </div>
 
@@ -235,7 +235,7 @@ ga('send', 'pageview');
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/blog/tags/bots/">bots</a>, <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
+        <a class="tag-link" href="/blog/tags/mysql/">mysql</a>, <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/blog/tags/sequelize/">sequelize</a>
     </div>
 
                     </div>
@@ -246,18 +246,20 @@ ga('send', 'pageview');
         <div class="article-entry" itemprop="articleBody">
         
             
-            <p><img src="https://cdn-images-1.medium.com/max/800/1*N32NxcCDKDDjlc56ghcsaA.jpeg" alt=""><br>Earlier this week, <a href="https://community.risingstack.com/" target="_blank" rel="external">Rising Stack Community</a> published the second of tutorial on Building a Twitter Bot with NodeJS. Some of you may have read the first part here <a href="https://hackernoon.com/create-a-simple-twitter-bot-with-node-js-5b14eb006c08#.43u5qmvts" target="_blank" rel="external">on Medium (published by Hackernoon)</a> while others might have gone through the first part of the guide on <a href="https://community.risingstack.com/node-js-twitter-bot-tutorial/" target="_blank" rel="external">RisingStack Community</a>.<br><a id="more"></a></p>
-<h2 id="Part-I-Setup-amp-Getting-Ready"><a href="#Part-I-Setup-amp-Getting-Ready" class="headerlink" title="Part I: Setup &amp; Getting Ready"></a>Part I: Setup &amp; Getting Ready</h2><p>The idea of creating a Twitter Bot started in the back of my head as I was learning Nodejs a few months back and wanted to stay updated with happenings in the community. Nodejs community has grown enormously in past year and to keep up with that you need tools or browser tabs to do so.</p>
-<p>I built a simple Twitter Bot in Nodejs (which still works, <a href="http://twitter.com/nodejstweet" target="_blank" rel="external">link here</a>)that fetches me tweets using general purpose #hashtags related to technologies such as #Nodejs #AngularJS #Mongodb &amp;c.</p>
-<p>In Part 1, I discuss of starting out building a simple Twitter Bot that retweets and favorite tweets based on the query used with setting up this Twitter application and getting access. To persistent communication with Twitter API, I use npm module called <a href="https://www.npmjs.com/package/twit" target="_blank" rel="external">twit</a> which has a very good documentation to refer to and offer various methods to communicate to <a href="https://dev.twitter.com/docs" target="_blank" rel="external">Twitter API</a>.</p>
-<p><img src="https://cdn-images-1.medium.com/max/800/1*l4nVQSFz3E3CmjD-g965pw.png" alt=""></p>
-<h2 id="Part-2-Advance-Usage"><a href="#Part-2-Advance-Usage" class="headerlink" title="Part 2: Advance Usage"></a>Part 2: Advance Usage</h2><p>The second part of the guide extends the usability of the Twitter bot by making our Bot interact with user (at a very high level) or in <strong>Twitter terms, to tweet back to any user who follows the bot</strong>. This is done by using <a href="https://dev.twitter.com/streaming/overview" target="_blank" rel="external">Twitter’s Streaming API</a>.</p>
-<p><strong>Here is the link to <a href="https://community.risingstack.com/how-to-make-a-twitter-bot-with-node-js/" target="_blank" rel="external">Second Part of Building a Twitter Bot with NodeJS</a></strong>.</p>
-<p>I received positive feedback by the people who followed the <a href="https://hackernoon.com/create-a-simple-twitter-bot-with-node-js-5b14eb006c08#.5qwkbly78" target="_blank" rel="external">first part of the guide</a> and that encouraged me to write a <a href="https://community.risingstack.com/how-to-make-a-twitter-bot-with-node-js/" target="_blank" rel="external">second part</a>. I hope you’ll have fun with it, since programming in NodeJS as a platform is really fun from a developer’s point of view, and a very pragmatic approach, I would say.</p>
-<p>I am looking forward to grab a glimpse of YOUR Twitter Bot. If you are working on it or have already published it on Twitter, don’t forget to send me a link with Twitter handler of your bot in the comments below or you can add your Twitter Bot to this Nodejs Twitter Bot resource Github repo <a href="https://github.com/amandeepmittal/awesome-twitter-bots" target="_blank" rel="external">here</a>.</p>
+            <p><img src="http://i.imgur.com/jIaEOEh.png" alt=""></p>
+<p>Often at times these days, I am find my self struggling with Sequelize to find a direct answer for my query. Recently, I have been working on a fullstack application in which there was a basic requirement of paginating results from backend (REST API) to the frontend. I struggled for two reasons. Firstly, coming from NoSQL background it’s hard to grasp SQL DBs. Second reason being is Sequelize documentation does not provide a clear and direct solution to this very basic abstraction. Lot of people assume things in the world of SQL databases.</p>
+<a id="more"></a>
+<p>Thus, in this post we will be talking about a basic paginating module using Sequelize, MySQL and Node.js.</p>
+<p>I am using you have some tables and records inside your MySQL database.</p>
+<p>To setup a new app and making database connection, read my post on [Getting started with Sequelize].</p>
+<h2 id="Defining-a-Model"><a href="#Defining-a-Model" class="headerlink" title="Defining a Model"></a>Defining a Model</h2><p>I am directly jumping on <code>user</code> model definition:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">'use strict'</span>;</div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="keyword">function</span>(<span class="params">sequelize, DataTypes</span>) </span>&#123;</div><div class="line">  <span class="keyword">var</span> user = sequelize.define(<span class="string">'user'</span>, &#123;</div><div class="line">	<span class="attr">id</span>:&#123;</div><div class="line">		<span class="attr">allowNull</span>: <span class="literal">false</span>,</div><div class="line">		<span class="attr">autoIncrement</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">primaryKey</span>: <span class="literal">true</span>,</div><div class="line">		<span class="attr">type</span>: DataTypes.INTEGER</div><div class="line">	&#125;,</div><div class="line">    <span class="attr">username</span>: DataTypes.INTEGER,</div><div class="line">    <span class="attr">first_name</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">last_name</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">date_of_birth</span>: DataTypes.STRING,</div><div class="line">    <span class="attr">created</span>: DataTypes.INTEGER,</div><div class="line">    <span class="attr">updated</span>: DataTypes.INTEGER,</div><div class="line">  &#125;, &#123;</div><div class="line">		<span class="attr">timestamps</span>: <span class="literal">false</span>,</div><div class="line">		<span class="attr">freezeTableName</span>: <span class="literal">true</span>,</div><div class="line">	  	<span class="attr">underscore</span>: <span class="literal">true</span></div><div class="line">	&#125;);</div><div class="line">  <span class="keyword">return</span> user;</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>I am using that we a table that contains hundred of user records that we want to display on an web application, say in the admin panel, and we want to show just 50 records at once.</p>
+<p>In the <code>api/user.js</code> I am defining an endpoint <code>/:page</code> that will fetch number of results we need from the database.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">router.get(<span class="string">'/:page'</span>, (req, res) =&gt; &#123;</div><div class="line">  <span class="keyword">let</span> limit = <span class="number">50</span>;   <span class="comment">// number of records per page</span></div><div class="line">  <span class="keyword">let</span> offset = <span class="number">0</span>;</div><div class="line"></div><div class="line">  db.user.findAndCountAll()</div><div class="line">  .then(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</div><div class="line">    <span class="keyword">let</span> page = req.paras.page;      <span class="comment">// page number</span></div><div class="line">    <span class="keyword">let</span> pages = <span class="built_in">Math</span>.ceil(data.count / limit);</div><div class="line">		offset = limit * (page - <span class="number">1</span>);</div><div class="line"></div><div class="line">    db.user.findAll(&#123;</div><div class="line">      <span class="attr">attributes</span>: [<span class="string">'id'</span>, <span class="string">'first_name'</span>, <span class="string">'last_name'</span>, <span class="string">'date_of_birth'</span>],</div><div class="line">      <span class="attr">limit</span>: limit,</div><div class="line">      <span class="attr">offset</span>: offset,</div><div class="line">      <span class="attr">$sort</span>: &#123; <span class="attr">id</span>: <span class="number">1</span> &#125;</div><div class="line">    &#125;)</div><div class="line">    .then(<span class="function">(<span class="params">users</span>) =&gt;</span> &#123;</div><div class="line">      res.status(<span class="number">200</span>).json(&#123;<span class="string">'result'</span>: users, <span class="string">'count'</span>: data.count, <span class="string">'pages'</span>: pages&#125;);</div><div class="line">    &#125;);</div><div class="line">  &#125;)</div><div class="line">  .catch(<span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</div><div class="line">		res.status(<span class="number">500</span>).send(<span class="string">'Internal Server Error'</span>);</div><div class="line">	&#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p><code>findAndCountAll</code> is the model for searching multiple records in the database and it returns both the data required and the count of elements in that table. The above query will get 50 user records at once until the next page is called to fetch the next 50 records. <code>limit</code> and <code>offset</code> are required in queries related to pagination in which <code>limit</code> fetches the number of rows based on the query whereas <code>offset</code> is used to skip the number of rows in the database table.</p>
 <hr>
-<p>Originally published on <a href="https://chatbotslife.com/how-to-make-a-twitter-bot-with-nodejs-d5cb04fdbf97" target="_blank" rel="external">ChatBotsLife.com</a></p>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> this Blog for more on JavaScript/Nodejs.</strong></p>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a></strong> this Blog for more on JavaScript/Nodejs/Ionic.</p>
 
         
         </div>
@@ -268,7 +270,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/" data-id="cj452qvrs000vh7zsoxlgjhs2" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/" data-id="cj452qvry0010h7zs589a7p9k" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -336,7 +338,7 @@ ga('send', 'pageview');
 
             
     
-        <a href="http://amandeepmittal.github.io/blog/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/">Comments</a>
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/">Comments</a>
     
 
         </footer>
@@ -345,19 +347,10 @@ ga('send', 'pageview');
         
 <nav id="article-nav">
     
-        <a href="/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/" id="article-nav-newer" class="article-nav-link-wrap">
-            <strong class="article-nav-caption">Newer</strong>
-            <div class="article-nav-title">
-                
-                    How to paginate records in MySQL using Sequelize and Nodejs
-                
-            </div>
-        </a>
     
-    
-        <a href="/blog/2017/06/10/Using-Bower-with-Heroku/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">Older</strong>
-            <div class="article-nav-title">Using Bower with Heroku</div>
+            <div class="article-nav-title">How to make a Twitter Bot with NodeJS</div>
         </a>
     
 </nav>
@@ -558,9 +551,9 @@ ga('send', 'pageview');
     <script>
     var disqus_config = function () {
         
-            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/';
+            this.page.url = 'http://amandeepmittal.github.io/blog/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/';
         
-        this.page.identifier = 'How-to-make-a-Twitter-Bot-with-NodeJS';
+        this.page.identifier = 'How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs';
     };
     (function() { 
         var d = document, s = d.createElement('script');  

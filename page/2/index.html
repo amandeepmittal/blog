@@ -165,7 +165,7 @@ ga('send', 'pageview');
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                14
+                15
                 <span>posts</span>
             </div>
             <div class="article-info-block">
@@ -206,6 +206,135 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-Eslint-with-Nodejs" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/blog/2017/04/28/Eslint-with-Nodejs/">How to start using ESLint in Node.js Applications?</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/blog/2017/04/28/Eslint-with-Nodejs/">
+            <time datetime="2017-04-28T09:36:48.000Z" itemprop="datePublished">2017-04-28</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/eslint/">eslint</a>, <a class="tag-link" href="/blog/tags/linting/">linting</a>, <a class="tag-link" href="/blog/tags/mean-stack/">mean stack</a>, <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><img src="http://i.imgur.com/7SvpTRp.png" alt=""></p>
+<p>ESLint is an open source JavaScript linting utility that help you overcome developer errors as JavaScript is loosely-typed language. There are quite a few options such as JSHint and JSCS in Javascript community for code linting and this post doesn’t suggest that you cannot use them.</p></p>
+            <p class="article-more-link">
+                <a href="/blog/2017/04/28/Eslint-with-Nodejs/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/28/Eslint-with-Nodejs/" data-id="cj452qvre000mh7zs6at3ktaa" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/04/28/Eslint-with-Nodejs/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/04/28/Eslint-with-Nodejs/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-How-Node-js-Works" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -257,7 +386,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/" data-id="cj43zmm2y000xs1zsqt780tl4" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/" data-id="cj452qvri000ph7zsand30w50" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -386,7 +515,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/" data-id="cj43zmm370019s1zsmy9ftjsc" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/" data-id="cj452qvs40015h7zsf0rodvdb" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -514,7 +643,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/" data-id="cj43zmm3d001es1zsuof26r46" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/" data-id="cj452qvs9001ah7zsaw7oq0iw" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -642,7 +771,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/03/JavaScript-Code-Conventions/" data-id="cj43zmm320012s1zso5dxrvc0" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/03/JavaScript-Code-Conventions/" data-id="cj452qvrv000yh7zshfsercih" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -736,6 +865,25 @@ ga('send', 'pageview');
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/" class="thumbnail">
+    
+    
+        <span style="background-image:url(http://i.imgur.com/jIaEOEh.png)" alt="How to paginate records in MySQL using Sequelize and Nodejs" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/" class="title">How to paginate records in MySQL using Sequelize and Nodejs</a></p>
+                            <p class="item-date"><time datetime="2017-06-20T04:33:04.000Z" itemprop="datePublished">2017-06-20</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/" class="thumbnail">
     
     
@@ -809,25 +957,6 @@ ga('send', 'pageview');
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/" class="thumbnail">
-    
-    
-        <span style="background-image:url(http://i.imgur.com/jIaEOEh.png)" alt="Getting Started with Sequelize for Nodejs Applications" class="thumbnail-image"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/blog/2017/05/30/Getting-Started-with-Sequelize-for-Nodejs-Applications/" class="title">Getting Started with Sequelize for Nodejs Applications</a></p>
-                            <p class="item-date"><time datetime="2017-05-30T09:37:43.000Z" itemprop="datePublished">2017-05-30</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -839,7 +968,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">archives</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a><span class="archive-list-count">5</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/06/">June 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/05/">May 2017</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/blog/archives/2017/04/">April 2017</a><span class="archive-list-count">5</span></li></ul>
         </div>
     </div>
 
@@ -848,7 +977,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tags</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/angularjs/">angularjs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bots/">bots</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/heroku/">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linting/">linting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/mean-stack/">mean stack</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/mysql/">mysql</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/nodejs/">nodejs</a><span class="tag-list-count">7</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/npm/">npm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/sequelize/">sequelize</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tips/">tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/web-development/">web development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/angularjs/">angularjs</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/atom/">atom</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bots/">bots</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/bower/">bower</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/eslint/">eslint</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/heroku/">heroku</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/javascript/">javascript</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/linting/">linting</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/mean-stack/">mean stack</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/mysql/">mysql</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/nodejs/">nodejs</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/npm/">npm</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/sequelize/">sequelize</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/tips/">tips</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/web-development/">web development</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/blog/tags/webstorm/">webstorm</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -857,7 +986,7 @@ ga('send', 'pageview');
     <div class="widget-wrap">
         <h3 class="widget-title">tag cloud</h3>
         <div class="widget tagcloud">
-            <a href="/blog/tags/angularjs/" style="font-size: 16.67px;">angularjs</a> <a href="/blog/tags/atom/" style="font-size: 10px;">atom</a> <a href="/blog/tags/bots/" style="font-size: 10px;">bots</a> <a href="/blog/tags/bower/" style="font-size: 10px;">bower</a> <a href="/blog/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/blog/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/blog/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/blog/tags/linting/" style="font-size: 10px;">linting</a> <a href="/blog/tags/mean-stack/" style="font-size: 13.33px;">mean stack</a> <a href="/blog/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/blog/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/blog/tags/npm/" style="font-size: 13.33px;">npm</a> <a href="/blog/tags/sequelize/" style="font-size: 10px;">sequelize</a> <a href="/blog/tags/tips/" style="font-size: 16.67px;">tips</a> <a href="/blog/tags/web-development/" style="font-size: 10px;">web development</a> <a href="/blog/tags/webstorm/" style="font-size: 10px;">webstorm</a>
+            <a href="/blog/tags/angularjs/" style="font-size: 16.67px;">angularjs</a> <a href="/blog/tags/atom/" style="font-size: 10px;">atom</a> <a href="/blog/tags/bots/" style="font-size: 10px;">bots</a> <a href="/blog/tags/bower/" style="font-size: 10px;">bower</a> <a href="/blog/tags/eslint/" style="font-size: 10px;">eslint</a> <a href="/blog/tags/heroku/" style="font-size: 10px;">heroku</a> <a href="/blog/tags/javascript/" style="font-size: 13.33px;">javascript</a> <a href="/blog/tags/linting/" style="font-size: 10px;">linting</a> <a href="/blog/tags/mean-stack/" style="font-size: 13.33px;">mean stack</a> <a href="/blog/tags/mysql/" style="font-size: 13.33px;">mysql</a> <a href="/blog/tags/nodejs/" style="font-size: 20px;">nodejs</a> <a href="/blog/tags/npm/" style="font-size: 13.33px;">npm</a> <a href="/blog/tags/sequelize/" style="font-size: 13.33px;">sequelize</a> <a href="/blog/tags/tips/" style="font-size: 16.67px;">tips</a> <a href="/blog/tags/web-development/" style="font-size: 10px;">web development</a> <a href="/blog/tags/webstorm/" style="font-size: 10px;">webstorm</a>
         </div>
     </div>
 
