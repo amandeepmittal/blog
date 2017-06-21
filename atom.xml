@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Aman Mittal&#39;s Blog</title>
-  <subtitle>Node.js Blog</subtitle>
+  <title>Aman Mittal</title>
+  <subtitle>My happy place.</subtitle>
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
@@ -156,9 +156,9 @@
     </summary>
     
     
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
       <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
     
       <category term="npm" scheme="http://amandeepmittal.github.io/blog/tags/npm/"/>
     
@@ -438,11 +438,11 @@
     </summary>
     
     
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
       <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
     
       <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
     
       <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     

@@ -3,17 +3,17 @@
 <head>
     <meta charset="utf-8">
     
-    <title>Aman Mittal&#39;s Blog</title>
+    <title>Aman Mittal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="I just find Node.js adroable...">
+    <meta name="description" content="Nodejs Developer">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Aman Mittal's Blog">
+<meta property="og:title" content="Aman Mittal">
 <meta property="og:url" content="http://amandeepmittal.github.io/blog/page/2/index.html">
-<meta property="og:site_name" content="Aman Mittal's Blog">
-<meta property="og:description" content="I just find Node.js adroable...">
+<meta property="og:site_name" content="Aman Mittal">
+<meta property="og:description" content="Nodejs Developer">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Aman Mittal's Blog">
-<meta name="twitter:description" content="I just find Node.js adroable...">
+<meta name="twitter:title" content="Aman Mittal">
+<meta name="twitter:description" content="Nodejs Developer">
     
 
     
@@ -63,7 +63,7 @@ ga('send', 'pageview');
         <div class="outer">
             <a href="/blog/" id="logo">
                 <i class="logo"></i>
-                <span class="site-title">Aman Mittal&#39;s Blog</span>
+                <span class="site-title">Aman Mittal</span>
             </a>
             <nav id="main-nav">
                 
@@ -206,6 +206,270 @@ ga('send', 'pageview');
 
             
             <section id="main">
+    <article id="post-Modular-programming-in-Angularjs" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/blog/2017/05/18/Modular-programming-in-Angularjs/">Modular programming in Angularjs</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/blog/2017/05/18/Modular-programming-in-Angularjs/">
+            <time datetime="2017-05-18T17:18:57.000Z" itemprop="datePublished">18-05-2017</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/angularjs/">angularjs</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><img src="http://i.imgur.com/e8vuWgs.png" alt=""></p>
+<p>Source code of an angular application can be divided in two ways:</p>
+<ul>
+<li>by layers</li>
+<li>by features</li>
+</ul>
+<h2 id="Modularization-by-Layers"><a href="#Modularization-by-Layers" class="headerlink" title="Modularization by Layers"></a>Modularization by Layers</h2><p>In this, each type of a component goes into a particular module. The main app module is defined in <code>app.js</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">|--app/</div><div class="line">    |--app.js</div><div class="line">    |--controller.js</div><div class="line">    |--directive.js</div><div class="line">    |--service.js</div><div class="line">|--index.html</div></pre></td></tr></table></figure></p>
+            <p class="article-more-link">
+                <a href="/blog/2017/05/18/Modular-programming-in-Angularjs/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/05/18/Modular-programming-in-Angularjs/" data-id="cj478ayzz000x7xzsm8139k8b" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/05/18/Modular-programming-in-Angularjs/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/05/18/Modular-programming-in-Angularjs/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-Setting-up-MEAN-Stack-with-Webstorm" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/">Setting up MEAN Stack with Webstorm</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/">
+            <time datetime="2017-05-05T04:30:41.000Z" itemprop="datePublished">05-05-2017</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/blog/tags/mean-stack/">mean stack</a>, <a class="tag-link" href="/blog/tags/nodejs/">nodejs</a>, <a class="tag-link" href="/blog/tags/tips/">tips</a>, <a class="tag-link" href="/blog/tags/webstorm/">webstorm</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            <p><p><img src="http://i.imgur.com/xNQU22c.jpg" alt=""></p>
+<p>Ever since I got interested in Node.js and started learning to program in JavaScript, both the programming language and the server side platform have been most relevant to me. Due them, I have made my first PR to an open source project on Github, heck, I even built one of my own using them (<em>see <a href="https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot">#100DaysOfCode</a></em>) which currently has more than 6 people actively contributing and enhancing it.</p></p>
+            <p class="article-more-link">
+                <a href="/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/#more">Read More</a>
+            </p>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/" data-id="cj478az4e001c7xzshfm6u1ky" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://amandeepmittal.github.io/blog/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://amandeepmittal.github.io/blog/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/">Comments</a>
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-Eslint-with-Nodejs" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -224,7 +488,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/28/Eslint-with-Nodejs/">
-            <time datetime="2017-04-28T09:36:48.000Z" itemprop="datePublished">2017-04-28</time>
+            <time datetime="2017-04-28T09:36:48.000Z" itemprop="datePublished">28-04-2017</time>
         </a>
     </div>
 
@@ -257,7 +521,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/28/Eslint-with-Nodejs/" data-id="cj4537k9h000uogzsvk9ylju3" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/28/Eslint-with-Nodejs/" data-id="cj478ayqv000n7xzs87fhl70u" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -353,7 +617,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/19/How-Node-js-Works/">
-            <time datetime="2017-04-19T05:54:37.000Z" itemprop="datePublished">2017-04-19</time>
+            <time datetime="2017-04-19T05:54:37.000Z" itemprop="datePublished">19-04-2017</time>
         </a>
     </div>
 
@@ -386,7 +650,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/" data-id="cj4537k9e000rogzs245jaxg7" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/19/How-Node-js-Works/" data-id="cj478aywc000o7xzsuv6bleub" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -482,7 +746,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/14/Modules-in-Angularjs/">
-            <time datetime="2017-04-14T06:50:12.000Z" itemprop="datePublished">2017-04-14</time>
+            <time datetime="2017-04-14T06:50:12.000Z" itemprop="datePublished">14-04-2017</time>
         </a>
     </div>
 
@@ -515,7 +779,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/" data-id="cj4537k9s0019ogzsgedhdzvz" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/14/Modules-in-Angularjs/" data-id="cj478az3i00177xzshto7ez09" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -611,7 +875,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/">
-            <time datetime="2017-04-05T13:01:29.000Z" itemprop="datePublished">2017-04-05</time>
+            <time datetime="2017-04-05T13:01:29.000Z" itemprop="datePublished">05-04-2017</time>
         </a>
     </div>
 
@@ -643,7 +907,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/" data-id="cj4537k9w001eogzsbyuxjmpg" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/05/The-Node-Way-Philosophy-of-a-Platform/" data-id="cj478az3a00157xzsflfi4362" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -739,7 +1003,7 @@ ga('send', 'pageview');
     <div class="article-date">
         <i class="fa fa-calendar"></i>
         <a href="/blog/2017/04/03/JavaScript-Code-Conventions/">
-            <time datetime="2017-04-03T17:31:43.000Z" itemprop="datePublished">2017-04-03</time>
+            <time datetime="2017-04-03T17:31:43.000Z" itemprop="datePublished">03-04-2017</time>
         </a>
     </div>
 
@@ -771,7 +1035,7 @@ ga('send', 'pageview');
 
 </div>
 
-    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/03/JavaScript-Code-Conventions/" data-id="cj4537k9p0015ogzsjwcvn66i" class="article-share-link"><i class="fa fa-share"></i>Share</a>
+    <a data-url="http://amandeepmittal.github.io/blog/blog/2017/04/03/JavaScript-Code-Conventions/" data-id="cj478az2600127xzs5hctwc6p" class="article-share-link"><i class="fa fa-share"></i>Share</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -877,7 +1141,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2017/06/20/How-to-paginate-records-in-MySQL-using-Sequelize-and-Nodejs/" class="title">How to paginate records in MySQL using Sequelize and Nodejs</a></p>
-                            <p class="item-date"><time datetime="2017-06-20T04:33:04.000Z" itemprop="datePublished">2017-06-20</time></p>
+                            <p class="item-date"><time datetime="2017-06-20T04:33:04.000Z" itemprop="datePublished">20-06-2017</time></p>
                         </div>
                     </li>
                 
@@ -896,7 +1160,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2017/06/15/How-to-make-a-Twitter-Bot-with-NodeJS/" class="title">How to make a Twitter Bot with NodeJS</a></p>
-                            <p class="item-date"><time datetime="2017-06-14T19:01:35.000Z" itemprop="datePublished">2017-06-15</time></p>
+                            <p class="item-date"><time datetime="2017-06-14T19:01:35.000Z" itemprop="datePublished">15-06-2017</time></p>
                         </div>
                     </li>
                 
@@ -915,7 +1179,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2017/06/10/Using-Bower-with-Heroku/" class="title">Using Bower with Heroku</a></p>
-                            <p class="item-date"><time datetime="2017-06-10T17:37:35.000Z" itemprop="datePublished">2017-06-10</time></p>
+                            <p class="item-date"><time datetime="2017-06-10T17:37:35.000Z" itemprop="datePublished">10-06-2017</time></p>
                         </div>
                     </li>
                 
@@ -934,7 +1198,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2017/06/06/Remove-node-modules-recursively/" class="title">Remove node_modules recursively</a></p>
-                            <p class="item-date"><time datetime="2017-06-06T12:49:48.000Z" itemprop="datePublished">2017-06-06</time></p>
+                            <p class="item-date"><time datetime="2017-06-06T12:49:48.000Z" itemprop="datePublished">06-06-2017</time></p>
                         </div>
                     </li>
                 
@@ -953,7 +1217,7 @@ ga('send', 'pageview');
                         <div class="item-inner">
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/blog/2017/06/02/What-s-new-in-npm-5/" class="title">What&#39;s new in npm 5</a></p>
-                            <p class="item-date"><time datetime="2017-06-02T12:37:17.000Z" itemprop="datePublished">2017-06-02</time></p>
+                            <p class="item-date"><time datetime="2017-06-02T12:37:17.000Z" itemprop="datePublished">02-06-2017</time></p>
                         </div>
                     </li>
                 
