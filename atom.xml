@@ -5,7 +5,7 @@
   <link href="/blog/atom.xml" rel="self"/>
   
   <link href="http://amandeepmittal.github.io/blog/"/>
-  <updated>2017-06-20T04:40:28.000Z</updated>
+  <updated>2017-06-25T14:05:33.000Z</updated>
   <id>http://amandeepmittal.github.io/blog/</id>
   
   <author>
@@ -14,6 +14,71 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>How to Mock Data for Nodejs Applications using Fakerjs</title>
+    <link href="http://amandeepmittal.github.io/blog/2017/06/25/How-to-Mock-Data-for-Nodejs-Applications-using-Fakerjs/"/>
+    <id>http://amandeepmittal.github.io/blog/2017/06/25/How-to-Mock-Data-for-Nodejs-Applications-using-Fakerjs/</id>
+    <published>2017-06-25T14:05:33.000Z</published>
+    <updated>2017-06-25T14:05:33.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="https://cdn-images-1.medium.com/max/800/1*ENk6O_-iQYdMlnrM4w82kw.jpeg" alt=""></p>
+<p>When we start to build an application, we generally do not want to worry much about data. To create a database and fill it with sample data seems much of a hassle to me personally. I rather focus more on creating RESTful API and front end of the application when I prototyping.<br><a id="more"></a></p>
+<p>However, this doesn’t mean I don’t pay attention to data organization in database. It’s important to have schemas of collections and documents or in any other way you want to organize your data. With this aspect complete, it brings clarity to what and how questions when creating APIs. In a recent scenario, building a prototype of an E-Commerce web application for a client, I found myself in a similar situation. I had a deadline to deliver the prototype with maximum number of functionalities checked required by the client. After settling on how to architecture database’s schemas, I went on searching​ and finding a gem to solve this issue: <strong>Faker.js</strong>.</p>
+<h2 id="Enter-Faker-js"><a href="#Enter-Faker-js" class="headerlink" title="Enter Faker.js"></a>Enter Faker.js</h2><p>It’s a wonderful node module to create fake/mock data when you are facing a similar situation as me. Faker has its own API, and it’s huge. All credit goes to <a href="https://twitter.com/marak" target="_blank" rel="external">Marak</a> who built it. It has a vast API for almost every use case with an excellent <a href="https://github.com/marak/Faker.js/" target="_blank" rel="external">documentation</a> that can help you get familiar in minutes on Github.</p>
+<p>Let’s consider a test case where I want some a user to have following amount of fields:</p>
+<ul>
+<li>name</li>
+<li>email</li>
+<li>website</li>
+<li>address</li>
+<li>bio</li>
+<li>image/avatar</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> faker = <span class="built_in">require</span>(<span class="string">'faker'</span>)</div><div class="line"></div><div class="line"><span class="keyword">const</span> User = &#123;</div><div class="line">  <span class="attr">name</span>: faker.name.findName(),</div><div class="line">  <span class="attr">email</span>: faker.internet.email(),</div><div class="line">  <span class="attr">website</span>: faker.internet.url(),</div><div class="line">  <span class="attr">address</span>: faker.address.streetAddress() + faker.address.city() + faker.address.country(),</div><div class="line">  <span class="attr">bio</span>: faker.lorem.sentences(),</div><div class="line">  <span class="attr">image</span>: faker.image.avatar()</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = User</div></pre></td></tr></table></figure>
+<p><img src="https://cdn-images-1.medium.com/max/1000/1*t8BjRlFjuUnbf0iXl-FZCQ.png" alt=""></p>
+<p>That’s it. This is how you mock data using faker.js. It’s quick, simple to setup and no hassle at all. You just have to add it to your <code>npm</code> dependencies:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm install faker --save</div></pre></td></tr></table></figure>
+<h2 id="Faker-js-Data"><a href="#Faker-js-Data" class="headerlink" title="Faker.js Data"></a>Faker.js Data</h2><p>List of data that can generate Faker.js:</p>
+<ul>
+<li>address</li>
+<li>commerce</li>
+<li>company</li>
+<li>date</li>
+<li>finance</li>
+<li>hacker</li>
+<li>helpers</li>
+<li>image</li>
+<li>internet</li>
+<li>lorem</li>
+<li>name</li>
+<li>phone</li>
+<li>random</li>
+<li>system</li>
+</ul>
+<p>Each element has a lot of sub-items that you can check <a href="https://github.com/Marak/faker.js" target="_blank" rel="external">here</a> in the documentation.</p>
+<p>Another good thing about Faker I like is that it’s not only restricted to server side JavaScript only. You can mock data for browser JavaScript too. A little snippet from the documentation shows how to do this:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span> = <span class="string">"faker.js"</span> <span class="attr">type</span> = <span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">  <span class="keyword">var</span> randomName = faker.name.findName(); <span class="comment">// Caitlyn Kerluke</span></div><div class="line">  <span class="keyword">var</span> randomEmail = faker.internet.email(); <span class="comment">// Rusty@arne.info</span></div><div class="line">  <span class="keyword">var</span> randomCard = faker.helpers.createCard(); <span class="comment">// random contact card containing many properties</span></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>This API will help you to prototype your JavaScript/Node.js applications at a faster rate. Not only that, you can easily mock your TDD/BDD tests when creating a RESTful API utilising this library.</p>
+<p><em><a href="https://github.com/amandeepmittal/fakerjs" target="_blank" rel="external">Full source code at this Github Repository</a></em></p>
+<hr>
+<p>Orginally Published on <a href="https://hackernoon.com/how-to-mock-data-for-node-js-applications-using-faker-js-b1f4c0e78102" target="_blank" rel="external">Hackernoon.com</a></p>
+<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> this Blog for more on JavaScript/Nodejs.</strong></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;https://cdn-images-1.medium.com/max/800/1*ENk6O_-iQYdMlnrM4w82kw.jpeg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;When we start to build an application, we generally do not want to worry much about data. To create a database and fill it with sample data seems much of a hassle to me personally. I rather focus more on creating RESTful API and front end of the application when I prototyping.&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
+    
+      <category term="testing" scheme="http://amandeepmittal.github.io/blog/tags/testing/"/>
+    
+  </entry>
   
   <entry>
     <title>How to paginate records in MySQL using Sequelize and Nodejs</title>
@@ -408,43 +473,6 @@
     
     
       <category term="angularjs" scheme="http://amandeepmittal.github.io/blog/tags/angularjs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Setting up MEAN Stack with Webstorm</title>
-    <link href="http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/"/>
-    <id>http://amandeepmittal.github.io/blog/2017/05/05/Setting-up-MEAN-Stack-with-Webstorm/</id>
-    <published>2017-05-05T04:30:41.000Z</published>
-    <updated>2017-06-08T11:25:55.000Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="http://i.imgur.com/xNQU22c.jpg" alt=""></p>
-<p>Ever since I got interested in Node.js and started learning to program in JavaScript, both the programming language and the server side platform have been most relevant to me. Due them, I have made my first PR to an open source project on Github, heck, I even built one of my own using them (<em>see <a href="https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot" target="_blank" rel="external">#100DaysOfCode</a></em>) which currently has more than 6 people actively contributing and enhancing it.</p>
-<a id="more"></a>
-<p>With Node.js, from quickly building server side application to build fullstack application is not much of a hassle. There are two important solutions to this: MEAN Stack &amp; Meteor.js.</p>
-<h2 id="MEAN-Stack"><a href="#MEAN-Stack" class="headerlink" title="MEAN Stack"></a>MEAN Stack</h2><p>MEAN Stack is the used to create complete web development solutions. With JavaScript it’s base, it has lot of advantages to offer and the important of all is one programming language both on server and client side. No context switching. A perfect fullstack solution for me personally.</p>
-<p>MEAN is an acronym for MongoDB, ExpressJS, AngularJS, and Node.js. So instead of learning four different programming languages, you just need to know JavaScript.</p>
-<h2 id="Setup-MEAN-Stack-in-Webstorm"><a href="#Setup-MEAN-Stack-in-Webstorm" class="headerlink" title="Setup MEAN Stack in Webstorm"></a>Setup MEAN Stack in Webstorm</h2><p>I am sharing a video here which shows on how to get started with MEAN using JetBrain’s Webstorm (<em>A JavaScript IDE</em>) by John Lindquist.</p>
-<p><a href="https://www.youtube.com/watch?v=JnMvok0Yks8" target="_blank" rel="external"><img src="https://img.youtube.com/vi/JnMvok0Yks8/0.jpg" alt="Setup MEAN Stack in Webstorm"></a></p>
-<hr>
-<p><strong><a href="https://upscri.be/e51a31/" target="_blank" rel="external">Subscribe</a> my Blog for more on JavaScript/Nodejs/Ionic.</strong></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://i.imgur.com/xNQU22c.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;Ever since I got interested in Node.js and started learning to program in JavaScript, both the programming language and the server side platform have been most relevant to me. Due them, I have made my first PR to an open source project on Github, heck, I even built one of my own using them (&lt;em&gt;see &lt;a href=&quot;https://github.com/freeCodeCamp/100DaysOfCode-twitter-bot&quot;&gt;#100DaysOfCode&lt;/a&gt;&lt;/em&gt;) which currently has more than 6 people actively contributing and enhancing it.&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="webstorm" scheme="http://amandeepmittal.github.io/blog/tags/webstorm/"/>
-    
-      <category term="tips" scheme="http://amandeepmittal.github.io/blog/tags/tips/"/>
-    
-      <category term="nodejs" scheme="http://amandeepmittal.github.io/blog/tags/nodejs/"/>
-    
-      <category term="mean stack" scheme="http://amandeepmittal.github.io/blog/tags/mean-stack/"/>
     
   </entry>
   
